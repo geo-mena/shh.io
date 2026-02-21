@@ -4,4 +4,4 @@ pages_build_output_dir = "./dist"
 
 [[kv_namespaces]]
 binding = "notes"
-id = "b1329cb8560e49d392bed877c9ac48a2"
+id = "241d0bc540b04c3bbebaa3d34000ddc5"
