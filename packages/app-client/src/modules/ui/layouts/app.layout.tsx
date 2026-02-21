@@ -259,7 +259,7 @@ export const AppLayout: ParentComponent = (props) => {
 
             <Navbar />
 
-            <div class="flex-1 pb-20 ">{props.children}</div>
+            <div class="flex-1">{props.children}</div>
 
             <Footer />
 
