@@ -1,41 +1,41 @@
 <script setup>
 const credentials = defineModel({
-  default: () => [
-    {
-      email: '',
-      password: '',
-    },
-  ],
+    default: () => [
+        {
+            email: '',
+            password: '',
+        },
+    ],
 });
 
 function addCredential() {
-  credentials.value = [
-    ...credentials.value,
-    {
-      email: '',
-      password: '',
-    },
-  ];
+    credentials.value = [
+        ...credentials.value,
+        {
+            email: '',
+            password: '',
+        },
+    ];
 }
 
 function removeCredential(index) {
-  credentials.value = credentials.value.filter((_, i) => i !== index);
+    credentials.value = credentials.value.filter((_, i) => i !== index);
 }
 </script>
 
 <template>
-  <div class="container">
-    <div v-for="(credential, index) in credentials" :key="index" class="row-container">
-      <input v-model="credential.email" class="input" type="text" placeholder="Email">
-      <input v-model="credential.password" class="input" type="password" placeholder="Password">
-      <button class="btn" :disabled="credentials.length <= 1" @click="removeCredential(index)">
-        Remove
-      </button>
+    <div class="container">
+        <div v-for="(credential, index) in credentials" :key="index" class="row-container">
+            <input v-model="credential.email" class="input" type="text" placeholder="Email">
+            <input v-model="credential.password" class="input" type="password" placeholder="Password">
+            <button class="btn" :disabled="credentials.length <= 1" @click="removeCredential(index)">
+                Remove
+            </button>
+        </div>
+        <button class="btn" @click="addCredential">
+            + Add credential
+        </button>
     </div>
-    <button class="btn" @click="addCredential">
-      + Add credential
-    </button>
-  </div>
 </template>
 
 <style scoped lang="less">

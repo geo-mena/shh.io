@@ -5,27 +5,27 @@ import { isNoteExpired } from './notes.models';
 export { getRefreshedNote };
 
 async function getRefreshedNote({
-  noteId,
-  notesRepository,
-  now = new Date(),
+    noteId,
+    notesRepository,
+    now = new Date(),
 }: {
-  noteId: string;
-  notesRepository: NotesRepository;
-  now?: Date;
+    noteId: string;
+    notesRepository: NotesRepository;
+    now?: Date;
 }) {
-  const { note } = await notesRepository.getNoteById({ noteId });
+    const { note } = await notesRepository.getNoteById({ noteId });
 
-  if (isNoteExpired({ note, now })) {
-    await notesRepository.deleteNoteById({ noteId });
+    if (isNoteExpired({ note, now })) {
+        await notesRepository.deleteNoteById({ noteId });
 
-    throw createNoteNotFoundError();
-  }
+        throw createNoteNotFoundError();
+    }
 
-  if (note.deleteAfterReading) {
-    await notesRepository.deleteNoteById({ noteId });
-  }
+    if (note.deleteAfterReading) {
+        await notesRepository.deleteNoteById({ noteId });
+    }
 
-  return {
-    note,
-  };
+    return {
+        note,
+    };
 }

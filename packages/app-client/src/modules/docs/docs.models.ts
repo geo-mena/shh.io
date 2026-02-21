@@ -4,13 +4,13 @@ import { joinUrlParts } from '../shared/http/http-client.models';
 export { buildDocUrl };
 
 function buildDocUrl({
-  path,
-  baseUrl = buildTimeConfig.documentationBaseUrl,
+    path,
+    baseUrl = buildTimeConfig.documentationBaseUrl,
 }: {
-  path: string;
-  baseUrl?: string;
+    path: string;
+    baseUrl?: string;
 }): string {
-  const url = joinUrlParts(baseUrl, path);
+    const url = joinUrlParts(baseUrl, path);
 
-  return url;
+    return url;
 }

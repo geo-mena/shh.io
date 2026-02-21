@@ -6,7 +6,7 @@ import { getConfig } from './config';
 export { overrideConfig };
 
 function overrideConfig(config: DeepPartial<Config>) {
-  const defaultConfig = getConfig();
+    const defaultConfig = getConfig();
 
-  return merge({}, defaultConfig, config);
+    return merge({}, defaultConfig, config);
 }

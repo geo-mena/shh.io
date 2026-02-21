@@ -12,33 +12,33 @@ import 'virtual:uno.css';
 import './app.css';
 
 render(
-  () => {
-    const initialColorMode = 'system';
-    const colorModeStorageKey = 'enclosed_color_mode';
-    const localStorageManager = createLocalStorageManager(colorModeStorageKey);
+    () => {
+        const initialColorMode = 'system';
+        const colorModeStorageKey = 'enclosed_color_mode';
+        const localStorageManager = createLocalStorageManager(colorModeStorageKey);
 
-    return (
-      <Router
-        children={getRoutes()}
-        root={props => (
-          <Suspense>
-            <I18nProvider>
-              <NoteContextProvider>
-                <ColorModeScript storageType={localStorageManager.type} storageKey={colorModeStorageKey} initialColorMode={initialColorMode} />
-                <ColorModeProvider
-                  initialColorMode={initialColorMode}
-                  storageManager={localStorageManager}
-                >
-                  <div class="min-h-screen font-sans text-sm font-400">{props.children}</div>
-                  <Toaster />
+        return (
+            <Router
+                children={getRoutes()}
+                root={props => (
+                    <Suspense>
+                        <I18nProvider>
+                            <NoteContextProvider>
+                                <ColorModeScript storageType={localStorageManager.type} storageKey={colorModeStorageKey} initialColorMode={initialColorMode} />
+                                <ColorModeProvider
+                                    initialColorMode={initialColorMode}
+                                    storageManager={localStorageManager}
+                                >
+                                    <div class="min-h-screen font-sans text-sm font-400">{props.children}</div>
+                                    <Toaster />
 
-                </ColorModeProvider>
-              </NoteContextProvider>
-            </I18nProvider>
-          </Suspense>
-        )}
-      />
-    );
-  },
-  document.getElementById('root')!,
+                                </ColorModeProvider>
+                            </NoteContextProvider>
+                        </I18nProvider>
+                    </Suspense>
+                )}
+            />
+        );
+    },
+    document.getElementById('root')!,
 );

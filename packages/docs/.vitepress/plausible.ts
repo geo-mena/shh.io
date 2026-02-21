@@ -8,11 +8,11 @@ const plausibleScriptSrc = String(process.env.VITE_PLAUSIBLE_SCRIPT_SRC);
 export { getPlausibleScripts };
 
 function getPlausibleScripts(): HeadConfig[] {
-  if (!isPlausibleEnabled || !plausibleDomain) {
-    return [];
-  }
+    if (!isPlausibleEnabled || !plausibleDomain) {
+        return [];
+    }
 
-  return [
-    ['script', { 'async': '', 'defer': '', 'data-domain': plausibleDomain, 'src': plausibleScriptSrc }],
-  ];
+    return [
+        ['script', { 'async': '', 'defer': '', 'data-domain': plausibleDomain, 'src': plausibleScriptSrc }],
+    ];
 }

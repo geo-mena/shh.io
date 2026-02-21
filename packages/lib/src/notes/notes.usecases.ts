@@ -10,64 +10,64 @@ export { createNote };
 const BASE_URL = 'https://shh.tofi.pro';
 
 async function createNote({
-  content,
-  password,
-  ttlInSeconds,
-  deleteAfterReading = false,
-  clientBaseUrl = BASE_URL,
-  apiBaseUrl = clientBaseUrl,
-  storeNote = params => storeNoteImpl({ ...params, apiBaseUrl }),
-  assets = [],
-  encryptionAlgorithm = 'aes-256-gcm',
-  serializationFormat = 'cbor-array',
-  isPublic = true,
-  pathPrefix,
-}: {
-  content: string;
-  password?: string;
-  ttlInSeconds?: number;
-  deleteAfterReading?: boolean;
-  clientBaseUrl?: string;
-  apiBaseUrl?: string;
-  assets?: NoteAsset[];
-  encryptionAlgorithm?: EncryptionAlgorithm;
-  serializationFormat?: SerializationFormat;
-  isPublic?: boolean;
-  pathPrefix?: string;
-  storeNote?: (params: {
-    payload: string;
-    ttlInSeconds?: number;
-    deleteAfterReading: boolean;
-    encryptionAlgorithm: EncryptionAlgorithm;
-    serializationFormat: SerializationFormat;
-    isPublic?: boolean;
-  }) => Promise<{ noteId: string }>;
-}) {
-  const { encryptedPayload, encryptionKey } = await encryptNote({ content, password, assets, encryptionAlgorithm, serializationFormat });
-  const isPasswordProtected = Boolean(password);
-
-  const { noteId } = await storeNote({
-    payload: encryptedPayload,
+    content,
+    password,
     ttlInSeconds,
-    deleteAfterReading,
-    encryptionAlgorithm,
-    serializationFormat,
-    isPublic,
-  });
-
-  const { noteUrl } = createNoteUrl({
-    noteId,
-    encryptionKey,
-    clientBaseUrl,
-    isPasswordProtected,
-    isDeletedAfterReading: deleteAfterReading,
+    deleteAfterReading = false,
+    clientBaseUrl = BASE_URL,
+    apiBaseUrl = clientBaseUrl,
+    storeNote = params => storeNoteImpl({ ...params, apiBaseUrl }),
+    assets = [],
+    encryptionAlgorithm = 'aes-256-gcm',
+    serializationFormat = 'cbor-array',
+    isPublic = true,
     pathPrefix,
-  });
+}: {
+    content: string;
+    password?: string;
+    ttlInSeconds?: number;
+    deleteAfterReading?: boolean;
+    clientBaseUrl?: string;
+    apiBaseUrl?: string;
+    assets?: NoteAsset[];
+    encryptionAlgorithm?: EncryptionAlgorithm;
+    serializationFormat?: SerializationFormat;
+    isPublic?: boolean;
+    pathPrefix?: string;
+    storeNote?: (params: {
+        payload: string;
+        ttlInSeconds?: number;
+        deleteAfterReading: boolean;
+        encryptionAlgorithm: EncryptionAlgorithm;
+        serializationFormat: SerializationFormat;
+        isPublic?: boolean;
+    }) => Promise<{ noteId: string }>;
+}) {
+    const { encryptedPayload, encryptionKey } = await encryptNote({ content, password, assets, encryptionAlgorithm, serializationFormat });
+    const isPasswordProtected = Boolean(password);
 
-  return {
-    encryptedPayload,
-    encryptionKey,
-    noteId,
-    noteUrl,
-  };
+    const { noteId } = await storeNote({
+        payload: encryptedPayload,
+        ttlInSeconds,
+        deleteAfterReading,
+        encryptionAlgorithm,
+        serializationFormat,
+        isPublic,
+    });
+
+    const { noteUrl } = createNoteUrl({
+        noteId,
+        encryptionKey,
+        clientBaseUrl,
+        isPasswordProtected,
+        isDeletedAfterReading: deleteAfterReading,
+        pathPrefix,
+    });
+
+    return {
+        encryptedPayload,
+        encryptionKey,
+        noteId,
+        noteUrl,
+    };
 }

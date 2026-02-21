@@ -3,25 +3,25 @@ import { times } from 'lodash-es';
 import { describe, expect, test } from 'vitest';
 
 export {
-  runCommonEncryptionAlgorithmTest,
+    runCommonEncryptionAlgorithmTest,
 };
 
 function runCommonEncryptionAlgorithmTest({
-  encryptionMethodDefinition,
+    encryptionMethodDefinition,
 }: {
-  encryptionMethodDefinition: EncryptionMethodsDefinition;
+    encryptionMethodDefinition: EncryptionMethodsDefinition;
 }) {
-  const { encryptBuffer, decryptString } = encryptionMethodDefinition;
+    const { encryptBuffer, decryptString } = encryptionMethodDefinition;
 
-  describe('encryptBuffer and decryptString', () => {
-    test('an encrypted buffer can be decrypted', async () => {
-      const encryptionKey = new Uint8Array(times(32, i => i));
-      const buffer = new Uint8Array([11, 22, 33, 44, 55, 66, 77, 88]);
+    describe('encryptBuffer and decryptString', () => {
+        test('an encrypted buffer can be decrypted', async () => {
+            const encryptionKey = new Uint8Array(times(32, i => i));
+            const buffer = new Uint8Array([11, 22, 33, 44, 55, 66, 77, 88]);
 
-      const { encryptedString } = await encryptBuffer({ buffer, encryptionKey });
-      const { decryptedBuffer } = await decryptString({ encryptedString, encryptionKey });
+            const { encryptedString } = await encryptBuffer({ buffer, encryptionKey });
+            const { decryptedBuffer } = await decryptString({ encryptedString, encryptionKey });
 
-      expect(decryptedBuffer).to.eql(buffer);
+            expect(decryptedBuffer).to.eql(buffer);
+        });
     });
-  });
 }

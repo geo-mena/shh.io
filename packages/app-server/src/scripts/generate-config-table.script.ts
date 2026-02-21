@@ -4,36 +4,36 @@ import { fs } from 'zx';
 import { configDefinition } from '../modules/app/config/config';
 
 function walk(configDefinition: ConfigDefinition, path: string[] = []): (ConfigDefinitionElement & { path: string[] })[] {
-  return Object
-    .entries(configDefinition)
-    .flatMap(([key, value]) => {
-      if ('schema' in value) {
-        return [{ ...value, path: [...path, key] }] as (ConfigDefinitionElement & { path: string[] })[];
-      }
+    return Object
+        .entries(configDefinition)
+        .flatMap(([key, value]) => {
+            if ('schema' in value) {
+                return [{ ...value, path: [...path, key] }] as (ConfigDefinitionElement & { path: string[] })[];
+            }
 
-      return walk(value, [...path, key]);
-    });
+            return walk(value, [...path, key]);
+        });
 }
 
 function escapeForRegExp(str: string): string {
-  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 const configDetails = walk(configDefinition);
 
 const rows = configDetails
-  .filter(({ path }) => path[0] !== 'env')
-  .map(({ doc, default: defaultValue, env }) => {
-    const isEmptyDefaultValue = isNil(defaultValue) || (isArray(defaultValue) && isEmpty(defaultValue));
-    const defaultValueString = isEmptyDefaultValue ? '_No default value_' : `\`${defaultValue}\``;
+    .filter(({ path }) => path[0] !== 'env')
+    .map(({ doc, default: defaultValue, env }) => {
+        const isEmptyDefaultValue = isNil(defaultValue) || (isArray(defaultValue) && isEmpty(defaultValue));
+        const defaultValueString = isEmptyDefaultValue ? '_No default value_' : `\`${defaultValue}\``;
 
-    return `| \`${env}\` | ${doc} | ${defaultValueString} |`;
-  });
+        return `| \`${env}\` | ${doc} | ${defaultValueString} |`;
+    });
 
 const markdownTable = [
-  '| Environment Variable | Description | Default Value |',
-  '| -------------------- | ----------- | ------------- |',
-  ...rows,
+    '| Environment Variable | Description | Default Value |',
+    '| -------------------- | ----------- | ------------- |',
+    ...rows,
 ].join('\n');
 
 console.log('Generated the following config table:\n');
@@ -49,8 +49,8 @@ const configTableEnd = '<!-- env-table-end -->';
 const oldTableRegExp = new RegExp(`${escapeForRegExp(configTableStart)}.*?${escapeForRegExp(configTableEnd)}`, 's');
 
 const newReadme = readme.replace(
-  oldTableRegExp,
-  `${configTableStart}\n\n${markdownTable}\n\n${configTableEnd}`,
+    oldTableRegExp,
+    `${configTableStart}\n\n${markdownTable}\n\n${configTableEnd}`,
 );
 
 await fs.writeFile(readmePath, newReadme);

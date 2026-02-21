@@ -4,11 +4,11 @@ import fsLiteDriver from 'unstorage/drivers/fs-lite';
 import { defineStorage } from '../storage.models';
 
 export const createFsLiteStorage = defineStorage(({ config }: { config: Config }) => {
-  const storage = createStorage({
-    driver: fsLiteDriver({ base: config.storage.driverConfig.fsLite.path }),
-  });
+    const storage = createStorage({
+        driver: fsLiteDriver({ base: config.storage.driverConfig.fsLite.path }),
+    });
 
-  return {
-    storage,
-  };
+    return {
+        storage,
+    };
 });

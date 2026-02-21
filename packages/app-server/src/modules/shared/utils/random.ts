@@ -5,5 +5,5 @@ export { generateId };
 const createUlid = ulidFactory();
 
 function generateId() {
-  return createUlid().toLowerCase();
+    return createUlid().toLowerCase();
 }

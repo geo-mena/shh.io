@@ -3,7 +3,7 @@ import { runCommonSerializationTests } from '../serialization.test-utils';
 import { cborArraySerializationDefinition } from './cbor-array.serialization';
 
 describe('cbor-array serialization', () => {
-  describe('cborArraySerializationDefinition', () => {
-    runCommonSerializationTests(cborArraySerializationDefinition);
-  });
+    describe('cborArraySerializationDefinition', () => {
+        runCommonSerializationTests(cborArraySerializationDefinition);
+    });
 });

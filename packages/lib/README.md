@@ -21,10 +21,10 @@ pnpm add @geomena/lib
 import { createNote } from '@geomena/lib';
 
 const { noteUrl } = await createNote({
-  content: 'Hello, World!',
-  password: 'password',
-  ttlInSeconds: 3600,
-  deleteAfterReading: true,
+    content: 'Hello, World!',
+    password: 'password',
+    ttlInSeconds: 3600,
+    deleteAfterReading: true,
 });
 
 console.log(noteUrl);

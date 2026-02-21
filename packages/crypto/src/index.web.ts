@@ -6,17 +6,17 @@ import { aes256GcmEncryptionAlgorithmDefinition } from './web/encryption-algorit
 export type { EncryptionAlgorithm, EncryptionAlgorithmDefinitions, EncryptionMethodsDefinition } from './encryption-algorithms/encryption-algorithms.types';
 
 export const {
-  deriveMasterKey,
-  generateBaseKey,
-  encryptionAlgorithms,
-  encryptionMethodDefinitions,
-  getDecryptionMethod,
-  getEncryptionMethod,
-  base64UrlToBuffer,
-  bufferToBase64Url,
+    deriveMasterKey,
+    generateBaseKey,
+    encryptionAlgorithms,
+    encryptionMethodDefinitions,
+    getDecryptionMethod,
+    getEncryptionMethod,
+    base64UrlToBuffer,
+    bufferToBase64Url,
 } = createEnclosedCryptoApi({
-  ...webCryptoApi,
-  encryptionMethodDefinitions: {
-    [AES_256_GCM]: aes256GcmEncryptionAlgorithmDefinition,
-  },
+    ...webCryptoApi,
+    encryptionMethodDefinitions: {
+        [AES_256_GCM]: aes256GcmEncryptionAlgorithmDefinition,
+    },
 });

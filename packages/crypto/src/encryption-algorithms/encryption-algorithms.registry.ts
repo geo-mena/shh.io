@@ -4,39 +4,39 @@ import { keys } from 'lodash-es';
 export { createEncryptionAlgorithmsRegistry };
 
 function createEncryptionAlgorithmsRegistry({
-  encryptionMethodDefinitions,
-}: {
-  encryptionMethodDefinitions: Record<EncryptionAlgorithm, EncryptionMethodsDefinition>;
-}) {
-  const encryptionAlgorithms = keys(encryptionMethodDefinitions);
-
-  return {
     encryptionMethodDefinitions,
-    encryptionAlgorithms,
+}: {
+    encryptionMethodDefinitions: Record<EncryptionAlgorithm, EncryptionMethodsDefinition>;
+}) {
+    const encryptionAlgorithms = keys(encryptionMethodDefinitions);
 
-    getEncryptionMethod: ({ encryptionAlgorithm }: { encryptionAlgorithm: string }) => {
-      const encryptionMethods: EncryptionMethodsDefinition | undefined = encryptionMethodDefinitions[encryptionAlgorithm];
+    return {
+        encryptionMethodDefinitions,
+        encryptionAlgorithms,
 
-      if (!encryptionMethods) {
-        throw new Error(`Encryption algorithm "${encryptionAlgorithm}" not found`);
-      }
+        getEncryptionMethod: ({ encryptionAlgorithm }: { encryptionAlgorithm: string }) => {
+            const encryptionMethods: EncryptionMethodsDefinition | undefined = encryptionMethodDefinitions[encryptionAlgorithm];
 
-      const { encryptBuffer } = encryptionMethods;
+            if (!encryptionMethods) {
+                throw new Error(`Encryption algorithm "${encryptionAlgorithm}" not found`);
+            }
 
-      return { encryptBuffer };
-    },
+            const { encryptBuffer } = encryptionMethods;
 
-    getDecryptionMethod: ({ encryptionAlgorithm }: { encryptionAlgorithm: string }) => {
-      const encryptionMethods = encryptionMethodDefinitions[encryptionAlgorithm];
+            return { encryptBuffer };
+        },
 
-      if (!encryptionMethods) {
-        throw new Error(`Decryption algorithm "${encryptionAlgorithm}" not found`);
-      }
+        getDecryptionMethod: ({ encryptionAlgorithm }: { encryptionAlgorithm: string }) => {
+            const encryptionMethods = encryptionMethodDefinitions[encryptionAlgorithm];
 
-      const { decryptString } = encryptionMethods;
+            if (!encryptionMethods) {
+                throw new Error(`Decryption algorithm "${encryptionAlgorithm}" not found`);
+            }
 
-      return { decryptString };
-    },
+            const { decryptString } = encryptionMethods;
 
-  };
+            return { decryptString };
+        },
+
+    };
 };

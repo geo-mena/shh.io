@@ -6,17 +6,17 @@ import type { Locale } from './i18n.provider';
 // en-GB -> en
 // pt-BR -> pt-BR
 export function findMatchingLocale({ preferredLocales, supportedLocales }: { preferredLocales: Intl.Locale[]; supportedLocales: Intl.Locale[] }) {
-  for (const locale of preferredLocales) {
-    const localeMatchRegion = supportedLocales.find(x => x.baseName === locale.baseName);
+    for (const locale of preferredLocales) {
+        const localeMatchRegion = supportedLocales.find(x => x.baseName === locale.baseName);
 
-    if (localeMatchRegion) {
-      return localeMatchRegion.baseName as Locale;
-    }
+        if (localeMatchRegion) {
+            return localeMatchRegion.baseName as Locale;
+        }
 
-    const localeMatchLanguage = supportedLocales.find(x => x.language === locale.language);
-    if (localeMatchLanguage) {
-      return localeMatchLanguage.baseName as Locale;
+        const localeMatchLanguage = supportedLocales.find(x => x.language === locale.language);
+        if (localeMatchLanguage) {
+            return localeMatchLanguage.baseName as Locale;
+        }
     }
-  }
-  return 'en';
+    return 'en';
 }

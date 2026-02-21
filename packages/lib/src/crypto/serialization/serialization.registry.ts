@@ -5,32 +5,32 @@ import { cborArraySerializationDefinition } from './cbor-array/cbor-array.serial
 export { getParsingMethod, getSerializationMethod };
 
 export const serializationMethodDefinitions = [
-  cborArraySerializationDefinition,
+    cborArraySerializationDefinition,
 ] as const;
 
 export const serializationMethodDefinitionsByName: Record<string, SerializationMethodsDefinition> = keyBy(serializationMethodDefinitions, 'name');
 export const serializationFormats = map(serializationMethodDefinitions, 'name');
 
 function getSerializationMethod({ serializationFormat }: { serializationFormat: SerializationFormat }) {
-  const serializationMethods = serializationMethodDefinitionsByName[serializationFormat];
+    const serializationMethods = serializationMethodDefinitionsByName[serializationFormat];
 
-  if (!serializationMethods) {
-    throw new Error(`Serialization format "${serializationFormat}" not found`);
-  }
+    if (!serializationMethods) {
+        throw new Error(`Serialization format "${serializationFormat}" not found`);
+    }
 
-  const { serializeNote } = serializationMethods;
+    const { serializeNote } = serializationMethods;
 
-  return { serializeNote };
+    return { serializeNote };
 }
 
 function getParsingMethod({ serializationFormat }: { serializationFormat: SerializationFormat }) {
-  const serializationMethods = serializationMethodDefinitionsByName[serializationFormat];
+    const serializationMethods = serializationMethodDefinitionsByName[serializationFormat];
 
-  if (!serializationMethods) {
-    throw new Error(`Serialization format "${serializationFormat}" not found`);
-  }
+    if (!serializationMethods) {
+        throw new Error(`Serialization format "${serializationFormat}" not found`);
+    }
 
-  const { parseNote } = serializationMethods;
+    const { parseNote } = serializationMethods;
 
-  return { parseNote };
+    return { parseNote };
 }

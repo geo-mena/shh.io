@@ -1,24 +1,24 @@
 <script setup>
 const checked = defineModel({
-  default: false,
+    default: false,
 });
 
 function toggle() {
-  checked.value = !checked.value;
+    checked.value = !checked.value;
 }
 </script>
 
 <template>
-  <div class="switch-wrapper">
-    <div class="switch">
-      <input :id="$.uid" v-model="checked" type="checkbox" class="checkbox">
-      <div class="slider" @click="toggle" />
-    </div>
+    <div class="switch-wrapper">
+        <div class="switch">
+            <input :id="$.uid" v-model="checked" type="checkbox" class="checkbox">
+            <div class="slider" @click="toggle" />
+        </div>
 
-    <label :id="$.uid" class="label" @click="toggle">
-      <slot />
-    </label>
-  </div>
+        <label :id="$.uid" class="label" @click="toggle">
+            <slot />
+        </label>
+    </div>
 </template>
 
 <style scoped lang="less">

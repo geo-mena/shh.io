@@ -1,17 +1,17 @@
 {
-  "$schema": "https://shadcn-solid.com/schema.json",
-  "uno": {
-    "config": "uno.config.ts",
-    "css": {
-      "path": "src/app.css",
-      "variable": true
+    "$schema": "https://shadcn-solid.com/schema.json",
+    "uno": {
+        "config": "uno.config.ts",
+        "css": {
+            "path": "src/app.css",
+            "variable": true
+        },
+        "color": "neutral",
+        "prefix": ""
     },
-    "color": "neutral",
-    "prefix": ""
-  },
-  "alias": {
-    "component": "@/modules/ui/components",
-    "ui": "@/modules/ui/components",
-    "cn": "@/modules/shared/style/cn"
-  }
+    "alias": {
+        "component": "@/modules/ui/components",
+        "ui": "@/modules/ui/components",
+        "cn": "@/modules/shared/style/cn"
+    }
 }

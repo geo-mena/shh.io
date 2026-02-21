@@ -5,5 +5,5 @@ export { createLogger };
 const baseLogger = pino();
 
 function createLogger({ namespace }: { namespace: string }) {
-  return baseLogger.child({ namespace });
+    return baseLogger.child({ namespace });
 }

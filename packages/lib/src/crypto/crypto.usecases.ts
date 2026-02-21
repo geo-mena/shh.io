@@ -7,57 +7,57 @@ import { getParsingMethod, getSerializationMethod } from './serialization/serial
 export { decryptNote, encryptNote };
 
 async function encryptNote({
-  content,
-  password,
-  assets = [],
-  encryptionAlgorithm = 'aes-256-gcm',
-  serializationFormat = 'cbor-array',
+    content,
+    password,
+    assets = [],
+    encryptionAlgorithm = 'aes-256-gcm',
+    serializationFormat = 'cbor-array',
 }: {
-  content: string;
-  password?: string;
-  assets?: NoteAsset[];
-  encryptionAlgorithm?: EncryptionAlgorithm;
-  serializationFormat?: SerializationFormat;
+    content: string;
+    password?: string;
+    assets?: NoteAsset[];
+    encryptionAlgorithm?: EncryptionAlgorithm;
+    serializationFormat?: SerializationFormat;
 }) {
-  const { serializeNote } = getSerializationMethod({ serializationFormat });
-  const { encryptBuffer } = getEncryptionMethod({ encryptionAlgorithm });
+    const { serializeNote } = getSerializationMethod({ serializationFormat });
+    const { encryptBuffer } = getEncryptionMethod({ encryptionAlgorithm });
 
-  const { baseKey } = generateBaseKey();
+    const { baseKey } = generateBaseKey();
 
-  const { masterKey } = await deriveMasterKey({ baseKey, password });
+    const { masterKey } = await deriveMasterKey({ baseKey, password });
 
-  const { noteBuffer } = await serializeNote({ note: { content, assets } });
+    const { noteBuffer } = await serializeNote({ note: { content, assets } });
 
-  const { encryptedString: encryptedPayload } = await encryptBuffer({ buffer: noteBuffer, encryptionKey: masterKey });
+    const { encryptedString: encryptedPayload } = await encryptBuffer({ buffer: noteBuffer, encryptionKey: masterKey });
 
-  const encryptionKey = bufferToBase64Url({ buffer: baseKey });
+    const encryptionKey = bufferToBase64Url({ buffer: baseKey });
 
-  return { encryptedPayload, encryptionKey };
+    return { encryptedPayload, encryptionKey };
 }
 
 async function decryptNote({
-  encryptedPayload,
-  password,
-  encryptionKey,
-  serializationFormat = 'cbor-array',
-  encryptionAlgorithm = 'aes-256-gcm',
+    encryptedPayload,
+    password,
+    encryptionKey,
+    serializationFormat = 'cbor-array',
+    encryptionAlgorithm = 'aes-256-gcm',
 }: {
-  encryptedPayload: string;
-  password?: string;
-  encryptionKey: string;
-  serializationFormat?: SerializationFormat;
-  encryptionAlgorithm?: EncryptionAlgorithm;
+    encryptedPayload: string;
+    password?: string;
+    encryptionKey: string;
+    serializationFormat?: SerializationFormat;
+    encryptionAlgorithm?: EncryptionAlgorithm;
 }) {
-  const { parseNote } = getParsingMethod({ serializationFormat });
-  const { decryptString } = getDecryptionMethod({ encryptionAlgorithm });
+    const { parseNote } = getParsingMethod({ serializationFormat });
+    const { decryptString } = getDecryptionMethod({ encryptionAlgorithm });
 
-  const baseKey = base64UrlToBuffer({ base64Url: encryptionKey });
+    const baseKey = base64UrlToBuffer({ base64Url: encryptionKey });
 
-  const { masterKey } = await deriveMasterKey({ baseKey, password });
+    const { masterKey } = await deriveMasterKey({ baseKey, password });
 
-  const { decryptedBuffer } = await decryptString({ encryptedString: encryptedPayload, encryptionKey: masterKey });
+    const { decryptedBuffer } = await decryptString({ encryptedString: encryptedPayload, encryptionKey: masterKey });
 
-  const { note } = await parseNote({ noteBuffer: decryptedBuffer });
+    const { note } = await parseNote({ noteBuffer: decryptedBuffer });
 
-  return { note };
+    return { note };
 }

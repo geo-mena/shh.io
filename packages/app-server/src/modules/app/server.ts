@@ -17,25 +17,25 @@ import { timeoutMiddleware } from './middlewares/timeout.middleware';
 export { createServer };
 
 function createServer({ config, storageFactory }: { config?: Config; storageFactory: BindableStorageFactory }) {
-  const app = new Hono<ServerInstanceGenerics>({ strict: true });
+    const app = new Hono<ServerInstanceGenerics>({ strict: true });
 
-  app.use(loggerMiddleware);
-  app.use(createConfigMiddleware({ config }));
-  app.use(timeoutMiddleware);
-  app.use(corsMiddleware);
-  app.use(createStorageMiddleware({ storageFactory }));
-  app.use(secureHeaders());
-  app.use(authenticationMiddleware);
+    app.use(loggerMiddleware);
+    app.use(createConfigMiddleware({ config }));
+    app.use(timeoutMiddleware);
+    app.use(corsMiddleware);
+    app.use(createStorageMiddleware({ storageFactory }));
+    app.use(secureHeaders());
+    app.use(authenticationMiddleware);
 
-  registerErrorMiddleware({ app });
+    registerErrorMiddleware({ app });
 
-  registerAuthRoutes({ app });
-  registerConfigRoutes({ app });
-  registerNotesRoutes({ app });
+    registerAuthRoutes({ app });
+    registerConfigRoutes({ app });
+    registerNotesRoutes({ app });
 
-  app.get('/api/ping', context => context.json({ status: 'ok' }));
+    app.get('/api/ping', context => context.json({ status: 'ok' }));
 
-  return {
-    app,
-  };
+    return {
+        app,
+    };
 }
