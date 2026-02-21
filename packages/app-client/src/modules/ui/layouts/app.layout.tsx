@@ -93,7 +93,7 @@ export const Navbar: Component = () => {
             <img src={themeStore.getColorMode() === 'dark' ? '/icon-light.png' : '/icon-dark.png'} alt="" class="size-9" />
           </Button>
 
-          <span class="text-muted-foreground hidden sm:block">
+          <span class="text-muted-foreground hidden sm:block border-b border-border">
             {t('app.description')}
           </span>
         </div>
