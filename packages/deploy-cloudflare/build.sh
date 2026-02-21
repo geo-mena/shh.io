@@ -10,10 +10,10 @@ log() {
 }
 
 log "Building the server"
-pnpm --filter @enclosed/app-server --fail-if-no-match build:cloudflare
+pnpm --filter @geomena/app-server --fail-if-no-match build:cloudflare
 
 log "Building the client"
-pnpm --filter @enclosed/app-client --fail-if-no-match build
+pnpm --filter @geomena/app-client --fail-if-no-match build
 
 log "Resetting the dist folder"
 rm -rf dist

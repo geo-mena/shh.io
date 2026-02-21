@@ -1,4 +1,4 @@
-import { encryptionAlgorithms } from '@enclosed/crypto';
+import { encryptionAlgorithms } from '@geomena/crypto';
 import { isApiClientErrorWithCode, isApiClientErrorWithStatusCode } from './api/api.models';
 import { decryptNote, encryptNote } from './crypto/crypto.usecases';
 import { serializationFormats } from './crypto/serialization/serialization.registry';

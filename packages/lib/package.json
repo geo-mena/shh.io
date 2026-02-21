@@ -1,5 +1,5 @@
 {
-  "name": "@enclosed/lib",
+  "name": "@geomena/lib",
   "type": "module",
   "version": "1.16.0",
   "packageManager": "pnpm@9.15.0",
@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "@corentinth/chisels": "catalog:",
-    "@enclosed/crypto": "workspace:*",
+    "@geomena/crypto": "workspace:*",
     "cbor-x": "^1.6.0",
     "lodash-es": "^4.17.21",
     "msgpackr": "^1.11.0",

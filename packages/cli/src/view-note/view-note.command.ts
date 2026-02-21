@@ -1,4 +1,4 @@
-import { decryptNote, fetchNote, isApiClientErrorWithStatusCode, parseNoteUrl } from '@enclosed/lib';
+import { decryptNote, fetchNote, isApiClientErrorWithStatusCode, parseNoteUrl } from '@geomena/lib';
 import { defineCommand } from 'citty';
 import picocolors from 'picocolors';
 import { getInstanceUrl } from '../config/config.usecases';

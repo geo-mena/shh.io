@@ -36,8 +36,8 @@ jobs:
       
     - name: Build iso-prod app
       run: |
-        pnpm -F @enclosed/app-client build
-        pnpm -F @enclosed/app-server build:node
+        pnpm -F @geomena/app-client build
+        pnpm -F @geomena/app-server build:node
         mkdir dist-app
         cp -r dist dist-app/public
         cp -r ../app-server/dist-node/index.cjs dist-app/index.cjs

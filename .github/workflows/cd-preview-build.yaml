@@ -24,7 +24,7 @@ jobs:
         run: pnpm i
 
       - name: Build the app
-        run: pnpm -F @enclosed/deploy-cloudflare build
+        run: pnpm -F @geomena/deploy-cloudflare build
 
       # Uploads the build directory as a workflow artifact
       - name: Upload build artifact
@@ -52,7 +52,7 @@ jobs:
         run: pnpm i
 
       - name: Build the docs
-        run: pnpm -F @enclosed/docs build
+        run: pnpm -F @geomena/docs build
 
       # Uploads the build directory as a workflow artifact
       - name: Upload build artifact

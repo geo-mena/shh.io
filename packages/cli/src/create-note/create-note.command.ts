@@ -1,4 +1,4 @@
-import { createNote } from '@enclosed/lib';
+import { createNote } from '@geomena/lib';
 import { defineCommand, showUsage } from 'citty';
 import { castArray } from 'lodash-es';
 import ora from 'ora';

@@ -1,5 +1,5 @@
 {
-  "name": "@enclosed/cli",
+  "name": "@geomena/cli",
   "type": "module",
   "version": "1.16.0",
   "packageManager": "pnpm@9.15.0",
@@ -33,7 +33,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@enclosed/lib": "workspace:*",
+    "@geomena/lib": "workspace:*",
     "@inquirer/prompts": "^6.0.0",
     "citty": "^0.1.6",
     "conf": "^13.0.1",

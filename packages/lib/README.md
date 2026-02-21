@@ -6,19 +6,19 @@ This package contains the core functionalities of [Enclosed](https://shh.tofi.pr
 
 ```bash
 # with npm
-npm install @enclosed/lib
+npm install @geomena/lib
 
 # with yarn
-yarn add @enclosed/lib
+yarn add @geomena/lib
 
 # with pnpm
-pnpm add @enclosed/lib
+pnpm add @geomena/lib
 ```
 
 ## Usage
 
 ```javascript
-import { createNote } from '@enclosed/lib';
+import { createNote } from '@geomena/lib';
 
 const { noteUrl } = await createNote({
   content: 'Hello, World!',

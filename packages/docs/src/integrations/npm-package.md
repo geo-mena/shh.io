@@ -13,17 +13,17 @@ You can install the Enclosed Lib using npm, yarn, or pnpm.
 ### Using npm
 
 ```bash
-npm install -g @enclosed/lib
+npm install -g @geomena/lib
 ```
 
 ### Using yarn
 
 ```bash
-yarn global add @enclosed/lib
+yarn global add @geomena/lib
 ```
 
 ### Using pnpm
 
 ```bash
-pnpm add -g @enclosed/lib
+pnpm add -g @geomena/lib
 ```

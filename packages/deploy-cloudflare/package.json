@@ -1,5 +1,5 @@
 {
-  "name": "@enclosed/deploy-cloudflare",
+  "name": "@geomena/deploy-cloudflare",
   "version": "1.16.0",
   "description": "Deploy scripts for Cloudflare Pages",
   "packageManager": "pnpm@9.15.0",

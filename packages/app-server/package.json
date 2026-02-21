@@ -1,5 +1,5 @@
 {
-  "name": "@enclosed/app-server",
+  "name": "@geomena/app-server",
   "type": "module",
   "version": "1.16.0",
   "packageManager": "pnpm@9.15.0",
@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@corentinth/chisels": "catalog:",
-    "@enclosed/lib": "workspace:*",
+    "@geomena/lib": "workspace:*",
     "@hono/node-server": "^1.12.1",
     "bcryptjs": "^2.4.3",
     "date-fns": "^4.0.0",

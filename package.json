@@ -1,5 +1,5 @@
 {
-  "name": "@enclosed/root",
+  "name": "@geomena/root",
   "version": "1.16.0",
   "description": "Send private and secure note",
   "packageManager": "pnpm@9.15.0",

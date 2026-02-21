@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { fileToNoteAsset } from '@enclosed/lib';
+import { fileToNoteAsset } from '@geomena/lib';
 
 export async function checkFileExist({ filePath }: { filePath: string }): Promise<boolean> {
   try {

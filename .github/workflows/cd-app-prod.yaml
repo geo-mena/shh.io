@@ -27,7 +27,7 @@ jobs:
         run: pnpm i
 
       - name: Build the app
-        run: pnpm -F @enclosed/deploy-cloudflare build
+        run: pnpm -F @geomena/deploy-cloudflare build
 
       - name: Publish to Cloudflare Pages
         uses: AdrianGonz97/refined-cf-pages-action@v1
@@ -63,7 +63,7 @@ jobs:
         run: pnpm i
 
       - name: Build the docs
-        run: pnpm -F @enclosed/docs build
+        run: pnpm -F @geomena/docs build
         env:
           VITE_IS_PLAUSIBLE_ENABLED: ${{ secrets.DOCS_IS_PLAUSIBLE_ENABLED }}
           VITE_PLAUSIBLE_DOMAIN: ${{ secrets.DOCS_PLAUSIBLE_DOMAIN }}

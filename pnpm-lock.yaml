@@ -44,7 +44,7 @@ importers:
       '@corentinth/chisels':
         specifier: 'catalog:'
         version: 1.2.1
-      '@enclosed/lib':
+      '@geomena/lib':
         specifier: workspace:*
         version: link:../lib
       '@kobalte/core':
@@ -138,7 +138,7 @@ importers:
       '@corentinth/chisels':
         specifier: 'catalog:'
         version: 1.2.1
-      '@enclosed/lib':
+      '@geomena/lib':
         specifier: workspace:*
         version: link:../lib
       '@hono/node-server':
@@ -226,7 +226,7 @@ importers:
 
   packages/cli:
     dependencies:
-      '@enclosed/lib':
+      '@geomena/lib':
         specifier: workspace:*
         version: link:../lib
       '@inquirer/prompts':
@@ -354,7 +354,7 @@ importers:
       '@corentinth/chisels':
         specifier: 'catalog:'
         version: 1.2.1
-      '@enclosed/crypto':
+      '@geomena/crypto':
         specifier: workspace:*
         version: link:../crypto
       cbor-x:

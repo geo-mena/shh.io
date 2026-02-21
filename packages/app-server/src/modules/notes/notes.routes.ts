@@ -1,5 +1,5 @@
 import type { ServerInstance } from '../app/server.types';
-import { encryptionAlgorithms, serializationFormats } from '@enclosed/lib';
+import { encryptionAlgorithms, serializationFormats } from '@geomena/lib';
 import { isNil } from 'lodash-es';
 import { z } from 'zod';
 import { createUnauthorizedError } from '../app/auth/auth.errors';
