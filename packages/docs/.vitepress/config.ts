@@ -56,8 +56,8 @@ export default defineConfig({
     themeConfig: {
 
         logo: {
-            light: '/logo-light.svg',
-            dark: '/logo-dark.svg',
+            light: '/icon-dark.png',
+            dark: '/icon-light.png',
             alt: 'Logo',
         },
 
