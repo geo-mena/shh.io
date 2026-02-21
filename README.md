@@ -161,7 +161,7 @@ This project is licensed under the Apache 2.0 License. See the [LICENSE](./LICEN
 This project is crafted with ❤️ by [geomena](https://geomena.com).
 If you find this project helpful, please consider [supporting my work](https://github.com/sponsors/geo-mena).
 
-Thank you to all the contributors who have helped make Enclosed better!
+Thank you to all the contributors who have helped make shh.io better!
 
 [![Contributors](https://contrib.rocks/image?repo=geo-mena/shh.io)](https://github.com/geo-mena/shh.io/graphs/contributors)
 
