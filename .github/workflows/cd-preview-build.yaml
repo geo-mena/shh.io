@@ -1,0 +1,63 @@
+# Name used in ./cd-preview-deploy.yaml
+name: CD - Preview Build
+
+on:
+    pull_request:
+      types: [opened, synchronize]
+
+jobs:
+  build-app-preview:
+    runs-on: ubuntu-latest
+    name: Build app and upload build artifact
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm i
+
+      - name: Build the app
+        run: pnpm -F @enclosed/deploy-cloudflare build
+
+      # Uploads the build directory as a workflow artifact
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: preview-app-build
+          if-no-files-found: error
+          path: packages/deploy-cloudflare/dist
+
+  build-docs-preview:
+    runs-on: ubuntu-latest
+    name: Build docs and upload build artifact
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm i
+
+      - name: Build the docs
+        run: pnpm -F @enclosed/docs build
+
+      # Uploads the build directory as a workflow artifact
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: preview-docs-build
+          if-no-files-found: error
+          path: packages/docs/dist

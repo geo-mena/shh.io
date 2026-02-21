@@ -1,0 +1,83 @@
+name: CD - Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish-app-prod:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    name: Publish app to production
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+      
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm i
+
+      - name: Build the app
+        run: pnpm -F @enclosed/deploy-cloudflare build
+
+      - name: Publish to Cloudflare Pages
+        uses: AdrianGonz97/refined-cf-pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          projectName: enclosed
+          workingDirectory: packages/deploy-cloudflare
+          directory: dist
+          deploymentName: Production App
+          branch: main
+          wranglerVersion: '3'
+
+  publish-docs-prod:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    name: Publish docs to production
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm i
+
+      - name: Build the docs
+        run: pnpm -F @enclosed/docs build
+        env:
+          VITE_IS_PLAUSIBLE_ENABLED: ${{ secrets.DOCS_IS_PLAUSIBLE_ENABLED }}
+          VITE_PLAUSIBLE_DOMAIN: ${{ secrets.DOCS_PLAUSIBLE_DOMAIN }}
+          VITE_PLAUSIBLE_SCRIPT_SRC: ${{ secrets.DOCS_PLAUSIBLE_SCRIPT_SRC }}
+
+      - name: Publish to Cloudflare Pages
+        uses: AdrianGonz97/refined-cf-pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          projectName: enclosed-docs
+          workingDirectory: packages/docs
+          directory: dist
+          deploymentName: Production Docs
+          branch: main
+          wranglerVersion: '3'
