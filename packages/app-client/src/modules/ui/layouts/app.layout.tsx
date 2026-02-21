@@ -88,9 +88,9 @@ export const Navbar: Component = () => {
   return (
     <div class="border-b border-border bg-surface">
       <div class="flex items-center justify-between px-6 py-3 mx-auto max-w-1200px">
-        <div class="flex items-baseline gap-4">
-          <Button variant="link" class="text-lg font-semibold border-b border-transparent hover:(no-underline !border-border) h-auto py-0 px-1 ml--1 rounded-none !transition-border-color-250" onClick={newNoteClicked}>
-            {t('app.title')}
+        <div class="flex items-center gap-4">
+          <Button variant="link" class="text-lg font-semibold border-b border-transparent hover:(no-underline !border-border) h-auto py-0 px-1 ml--1 rounded-none !transition-border-color-250 flex items-center gap-2" onClick={newNoteClicked}>
+            <img src={themeStore.getColorMode() === 'dark' ? '/icon-light.png' : '/icon-dark.png'} alt="" class="size-10" />
           </Button>
 
           <span class="text-muted-foreground hidden sm:block">
