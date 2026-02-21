@@ -92,7 +92,7 @@ This ensures that the note remains securely encrypted during transmission and st
 
 ## CLI
 
-The Enclosed CLI allows you to create notes from the terminal. You can install it globally using npm, yarn, or pnpm.
+The shh.io CLI allows you to create notes from the terminal. You can install it globally using npm, yarn, or pnpm.
 
 ### Installation
 

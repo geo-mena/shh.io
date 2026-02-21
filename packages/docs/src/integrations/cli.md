@@ -4,7 +4,7 @@ The Enclosed Command-Line Interface (CLI) allows you to create and manage secure
 
 ## Installation
 
-You can install the Enclosed CLI globally using npm, yarn, or pnpm.
+You can install the shh.io CLI globally using npm, yarn, or pnpm.
 
 ### Using npm
 
@@ -28,7 +28,7 @@ Once installed, you can use the `enclosed` command in your terminal.
 
 ## Creating a Note
 
-The primary function of the Enclosed CLI is to create secure notes. You can create a note with a simple command.
+The primary function of the shh.io CLI is to create secure notes. You can create a note with a simple command.
 
 ### Basic Usage
 
@@ -76,7 +76,7 @@ enclosed create --deleteAfterReading --password "mypassword" --ttl 3600 "This is
 
 ## Viewing a Note
 
-The Enclosed CLI can also be used to view notes directly from the terminal.
+The shh.io CLI can also be used to view notes directly from the terminal.
 
 ### Basic Usage
 
@@ -112,7 +112,7 @@ This command will configure the CLI to use your instance for creating and viewin
 
 ## Updating the CLI
 
-To update the Enclosed CLI to the latest version, simply re-run the installation command:
+To update the shh.io CLI to the latest version, simply re-run the installation command:
 
 ### Using npm
 
@@ -136,7 +136,7 @@ This will ensure that you have the latest features and security updates.
 
 ## Uninstalling the CLI
 
-If you need to remove the Enclosed CLI, you can uninstall it with the following commands:
+If you need to remove the shh.io CLI, you can uninstall it with the following commands:
 
 ### Using npm
 
@@ -164,8 +164,8 @@ For more advanced usage, you can refer to the CLI's help command, which provides
 enclosed --help
 ```
 
-This will display the complete list of commands and options available in the Enclosed CLI.
+This will display the complete list of commands and options available in the shh.io CLI.
 
 ## Next Steps
 
-Now that you're familiar with the basic and advanced features of the Enclosed CLI, you can start integrating it into your workflows. Whether you're automating note creation or managing secure communication from the terminal, the Enclosed CLI is a powerful tool for ensuring your messages remain private and secure.
+Now that you're familiar with the basic and advanced features of the shh.io CLI, you can start integrating it into your workflows. Whether you're automating note creation or managing secure communication from the terminal, the shh.io CLI is a powerful tool for ensuring your messages remain private and secure.

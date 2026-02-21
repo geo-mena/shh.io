@@ -1,4 +1,4 @@
-# Enclosed CLI
+# shh.io CLI
 
 This package contains the CLI for [shh.io](https://shh.tofi.pro), an open-source project that aims to provide a simple and secure way to share e2e encrypted notes.
 
