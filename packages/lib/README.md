@@ -1,4 +1,4 @@
-### Enclosed lib
+# shh.io lib
 
 This package contains the core functionalities of [shh.io](https://shh.tofi.pro/), an open-source project that aims to provide a simple and secure way to share e2e encrypted notes.
 

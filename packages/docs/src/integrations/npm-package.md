@@ -4,11 +4,11 @@
 This page is a work in progress.
 :::
 
-The Enclosed lib is available as an npm package. You can use it to create and manage Enclosed notes.
+The shh.io lib is available as an npm package. You can use it to create and manage Enclosed notes.
 
 ## Installation
 
-You can install the Enclosed Lib using npm, yarn, or pnpm.
+You can install the shh.io lib using npm, yarn, or pnpm.
 
 ### Using npm
 
