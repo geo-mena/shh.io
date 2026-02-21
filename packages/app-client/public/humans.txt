@@ -1,4 +1,3 @@
 /* TEAM */
-Developer: Corentin Thomasset
-Site: https://corentin.tech
-Twitter: @cthmsst
+Developer: George Mena
+Site: https://geomena.com
