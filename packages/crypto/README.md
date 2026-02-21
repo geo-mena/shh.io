@@ -1,6 +1,6 @@
 # Enclosed crypto library
 
-This package contains the natives crypto primitives used by the [Enclosed lib and project](https://shh.tofi.pro). It is a standalone package built to provide compatibility between different environments by exposing the same API for node:crypto and web SubtleCrypto.
+This package contains the natives crypto primitives used by the [shh.io lib and project](https://shh.tofi.pro). It is a standalone package built to provide compatibility between different environments by exposing the same API for node:crypto and web SubtleCrypto.
 
 ## Installation
 
@@ -21,4 +21,4 @@ This project is licensed under the Apache 2.0 License. See the [LICENSE](./LICEN
 
 ## Credits and Acknowledgements
 
-This project is crafted with ❤️ by [Corentin Thomasset](https://corentin.tech).
+This project is crafted with ❤️ by [geomena](https://geomena.com).
