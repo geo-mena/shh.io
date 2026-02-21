@@ -4,7 +4,7 @@ outline: deep
 
 # Docker Installation
 
-Enclosed can be easily installed and run using Docker. This method is recommended for users who want a quick and straightforward way to deploy their own instance of Enclosed with minimal setup.
+shh.io can be easily installed and run using Docker. This method is recommended for users who want a quick and straightforward way to deploy their own instance of shh.io with minimal setup.
 
 ## Prerequisites
 
@@ -12,17 +12,17 @@ Before you begin, ensure that you have Docker installed on your system. You can 
 
 ## Rootless and Non-rootless Docker Images
 
-Starting from version `1.5.1`, Enclosed provides both rootless and non-rootless Docker images. The rootless image, tagged as `latest-rootless` or `<version>-rootless` (e.g., `1.5.1-rootless`), allows you to run the container without requiring root privileges. This is useful in environments where running containers as root is discouraged for security reasons.
+Starting from version `1.5.1`, shh.io provides both rootless and non-rootless Docker images. The rootless image, tagged as `latest-rootless` or `<version>-rootless` (e.g., `1.5.1-rootless`), allows you to run the container without requiring root privileges. This is useful in environments where running containers as root is discouraged for security reasons.
 
 The non-rootless image, tagged as `latest` or `<version>` (e.g., `1.5.1`), does not require binding the user in Docker commands and can be used in scenarios where root privileges are acceptable.
 
 ## Image Sources
 
-Enclosed Docker images are available on both Docker Hub and GitHub Container Registry (GHCR). You can choose the source that best suits your needs.
+shh.io Docker images are available on both Docker Hub and GitHub Container Registry (GHCR). You can choose the source that best suits your needs.
 
 ## Basic Docker Run
 
-To run Enclosed using Docker, you can use the following command:
+To run shh.io using Docker, you can use the following command:
 
 ::: code-group
 
@@ -35,7 +35,7 @@ docker run -d --name enclosed --restart unless-stopped -p 8787:8787 ghcr.io/geo-
 ```
 :::
 
-This command will download the Enclosed image and start the application, making it accessible at `http://localhost:8787`.
+This command will download the shh.io image and start the application, making it accessible at `http://localhost:8787`.
 
 ### Explanation of the Command
 
@@ -47,7 +47,7 @@ This command will download the Enclosed image and start the application, making 
 
 ## Docker with Volume Persistence
 
-To ensure that your notes and settings are preserved even if the container is stopped or removed, you can run Enclosed with volume persistence. Replace `/path/to/local/data` with the path to your local data directory:
+To ensure that your notes and settings are preserved even if the container is stopped or removed, you can run shh.io with volume persistence. Replace `/path/to/local/data` with the path to your local data directory:
 
 ::: code-group
 ```bash [From Docker Hub]
@@ -78,11 +78,11 @@ docker run -d --name enclosed --restart unless-stopped -p 8787:8787 -v /path/to/
 
 ## Managing the Docker Container
 
-Once Enclosed is running in a Docker container, you can manage it using the following commands:
+Once shh.io is running in a Docker container, you can manage it using the following commands:
 
 ### Stopping the Container
 
-To stop the Enclosed container, run:
+To stop the shh.io container, run:
 
 ```bash
 docker stop enclosed
@@ -105,9 +105,9 @@ docker stop enclosed
 docker rm enclosed
 ```
 
-## Updating Enclosed
+## Updating shh.io
 
-To update your Enclosed instance to the latest version, first remove the existing container, pull the latest image, and then run the container again:
+To update your shh.io instance to the latest version, first remove the existing container, pull the latest image, and then run the container again:
 
 ```bash
 docker stop enclosed
@@ -123,8 +123,8 @@ docker pull ghcr.io/geo-mena/shh
 docker run -d --name enclosed --restart unless-stopped -p 8787:8787 -v /path/to/local/data:/app/.data --user $(id -u):$(id -g) geo-mena/shh
 ```
 
-This will ensure that you are using the latest version of Enclosed with all your previous data intact.
+This will ensure that you are using the latest version of shh.io with all your previous data intact.
 
 ## Next Steps
 
-Once you have Enclosed up and running, you can explore [configuration options](./configuration) to customize your instance further. For more advanced setups, consider using [Docker Compose](./docker-compose) to manage your Enclosed deployment.
+Once you have shh.io up and running, you can explore [configuration options](./configuration) to customize your instance further. For more advanced setups, consider using [Docker Compose](./docker-compose) to manage your shh.io deployment.

@@ -1,10 +1,10 @@
-# Enclosed Brand Kit
+# shh.io Brand Kit
 
-Welcome to the Enclosed Brand Kit. Here, you'll find resources to help you represent Enclosed accurately in media and press coverage. Enclosed is an open-source web application designed for private, end-to-end encrypted note and file sharing.
+Welcome to the shh.io Brand Kit. Here, you'll find resources to help you represent shh.io accurately in media and press coverage. shh.io is an open-source web application designed for private, end-to-end encrypted note and file sharing.
 
 ## Project Overview
 
-**Enclosed** is a minimalistic, secure web app enabling users to send encrypted notes and files with end-to-end security. The platform prioritizes user privacy by ensuring that servers have zero knowledge of the contents shared. For a complete overview of features, see the [README](https://github.com/geo-mena/shh.io).
+**shh.io** is a minimalistic, secure web app enabling users to send encrypted notes and files with end-to-end security. The platform prioritizes user privacy by ensuring that servers have zero knowledge of the contents shared. For a complete overview of features, see the [README](https://github.com/geo-mena/shh.io).
 
 ### Quick Links
 
@@ -15,7 +15,7 @@ Welcome to the Enclosed Brand Kit. Here, you'll find resources to help you repre
 
 ## Logo Assets
 
-We offer Enclosed's logo in dark and light modes, in multiple formats suitable for web and print.
+We offer shh.io's logo in dark and light modes, in multiple formats suitable for web and print.
 
 ### Logo Usage Guidelines
 
@@ -36,9 +36,9 @@ We offer Enclosed's logo in dark and light modes, in multiple formats suitable f
 
 ### Social Banner
 
-You can use this banner to promote Enclosed on social media platforms.
+You can use this banner to promote shh.io on social media platforms.
 
-[![Enclosed](/og-image.png)](/og-image.png)
+[![shh.io](/og-image.png)](/og-image.png)
 
 <a href="/og-image.png" download>Download Social Banner</a>
 
@@ -54,7 +54,7 @@ You can use this banner to promote Enclosed on social media platforms.
 - **Dark Mode**: A dark theme for late-night note sharing.
 - **Responsive Design**: Works on all devices, from desktops to mobile phones.
 - **Open Source**: The source code is available under the Apache 2.0 License.
-- **Self-Hostable**: Run your instance of Enclosed for private note sharing.
+- **Self-Hostable**: Run your instance of shh.io for private note sharing.
 - **CLI**: A command-line interface for creating notes from the terminal.
 - **Very low environmental impact**: the app and the docs is rated A+ on websitecarbon.com (see [here](https://www.websitecarbon.com/website/shh-tofi-pro/) and [here](https://www.websitecarbon.com/website/docs-shh-tofi-pro/)).
 

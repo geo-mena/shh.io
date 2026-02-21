@@ -4,11 +4,11 @@ import { data } from '../data/configuration.data.ts'
 
 # Self-Host Configuration
 
-Configuring your self-hosted instance of Enclosed allows you to customize the application to better suit your environment and requirements. This guide covers the key environment variables you can set to control various aspects of the application, including port settings, security options, and storage configurations.
+Configuring your self-hosted instance of shh.io allows you to customize the application to better suit your environment and requirements. This guide covers the key environment variables you can set to control various aspects of the application, including port settings, security options, and storage configurations.
 
 ## Environment Variables
 
-Enclosed is configured primarily through environment variables. Below is a list of the available variables, along with their descriptions and default values.
+shh.io is configured primarily through environment variables. Below is a list of the available variables, along with their descriptions and default values.
 
 <div v-html="data" />
 
@@ -32,7 +32,7 @@ openssl pkcs12 -certpbe AES-256-CBC -export -out test_cert.pfx -inkey private-ke
 
 ## Applying Configuration Changes
 
-To apply your configuration changes, ensure that you have exported the environment variables in your shell or included them in your environment configuration file. Then, restart your Enclosed instance to apply the changes.
+To apply your configuration changes, ensure that you have exported the environment variables in your shell or included them in your environment configuration file. Then, restart your shh.io instance to apply the changes.
 
 For Docker deployments, you can pass the environment variables directly when running the container:
 
@@ -48,4 +48,4 @@ docker run \
 
 ## Next Steps
 
-Once your instance is configured, you can proceed to explore advanced deployment options or set up monitoring to ensure your Enclosed instance runs smoothly. For a more complex setup, consider using [Docker Compose](./docker-compose) or deploying on a cloud provider.
+Once your instance is configured, you can proceed to explore advanced deployment options or set up monitoring to ensure your shh.io instance runs smoothly. For a more complex setup, consider using [Docker Compose](./docker-compose) or deploying on a cloud provider.

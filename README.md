@@ -31,7 +31,7 @@ All notes are end-to-end encrypted, ensuring that the server and storage have ze
 
 A live instance is available at [shh.tofi.pro](https://shh.tofi.pro).
 
-[![Enclosed](./.github/enclosed-mockup.png)](https://shh.tofi.pro)
+[![shh.io](./.github/enclosed-mockup.png)](https://shh.tofi.pro)
 
 ## Features
 
@@ -45,7 +45,7 @@ A live instance is available at [shh.tofi.pro](https://shh.tofi.pro).
 - **Dark Mode**: A dark theme for late-night note sharing.
 - **Responsive Design**: Works on all devices, from desktops to mobile phones.
 - **Open Source**: The source code is available under the Apache 2.0 License.
-- **Self-Hostable**: Run your instance of Enclosed for private note sharing.
+- **Self-Hostable**: Run your instance of shh.io for private note sharing.
 - **CLI**: A command-line interface for creating notes from the terminal.
 - **Very low environmental impact**: the app and the docs is rated A+ on websitecarbon.com (see [here](https://www.websitecarbon.com/website/shh-tofi-pro/) and [here](https://www.websitecarbon.com/website/docs-shh-tofi-pro/)).
 
@@ -130,7 +130,7 @@ enclosed view <note-url>
 enclosed view --password "password" <note-url>
 ```
 
-### Configure the enclosed instance to use
+### Configure the shh.io instance to use
 
 ```bash
 # By default, the CLI uses the public instance at shh.tofi.pro
@@ -144,8 +144,8 @@ This project is organized as a monorepo using `pnpm` workspaces. The structure i
 - **[packages/app-client](./packages/app-client/)**: Frontend application built with SolidJS.
 - **[packages/app-server](./packages/app-server/)**: Backend application using HonoJS.
 - **[packages/deploy-cloudflare](./packages/deploy-cloudflare/)**: Cloudflare Pages build scripts and configuration.
-- **[packages/lib](./packages/lib/)**: Core functionalities of Enclosed.
-- **[packages/cli](./packages/cli/)**: Command-line interface for Enclosed.
+- **[packages/lib](./packages/lib/)**: Core functionalities of shh.io.
+- **[packages/cli](./packages/cli/)**: Command-line interface for shh.io.
 
 ## Contributing
 
@@ -167,7 +167,7 @@ Thank you to all the contributors who have helped make shh.io better!
 
 ### Stack
 
-Enclosed would not have been possible without the following open-source projects:
+shh.io would not have been possible without the following open-source projects:
 
 - **Frontend**
   - **[SolidJS](https://www.solidjs.com)**: A declarative JavaScript library for building user interfaces.
@@ -183,7 +183,7 @@ Enclosed would not have been possible without the following open-source projects
 
 ### Hosting
 
-The [live instance](https://shh.tofi.pro) of Enclosed is hosted on [Cloudflare Pages](https://pages.cloudflare.com/) using [Cloudflare KV](https://developers.cloudflare.com/kv/) for storage.
+The [live instance](https://shh.tofi.pro) of shh.io is hosted on [Cloudflare Pages](https://pages.cloudflare.com/) using [Cloudflare KV](https://developers.cloudflare.com/kv/) for storage.
 
 ### Inspiration
 

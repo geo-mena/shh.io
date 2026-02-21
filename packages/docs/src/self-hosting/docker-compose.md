@@ -1,6 +1,6 @@
 # Docker Compose Installation
 
-Using Docker Compose allows you to define and manage multi-container Docker applications. For Enclosed, Docker Compose simplifies the process of setting up and maintaining the application, especially when you want to include additional services or need persistent storage.
+Using Docker Compose allows you to define and manage multi-container Docker applications. For shh.io, Docker Compose simplifies the process of setting up and maintaining the application, especially when you want to include additional services or need persistent storage.
 
 ## Prerequisites
 
@@ -8,7 +8,7 @@ Ensure that you have Docker and Docker Compose installed on your system. You can
 
 ## Docker Compose Configuration
 
-Below is a sample `docker-compose.yml` file that you can use to deploy Enclosed. This configuration includes options for persistent storage and automatic restart.
+Below is a sample `docker-compose.yml` file that you can use to deploy shh.io. This configuration includes options for persistent storage and automatic restart.
 
 <<< @/../../../docker-compose.yml
 
@@ -21,7 +21,7 @@ Below is a sample `docker-compose.yml` file that you can use to deploy Enclosed.
 - **ports**: Maps port 8787 on your host to port 8787 in the container, making the application accessible on your local machine.
 - **volumes**:
   - `enclosed-data:/app/.data`: Maps a local volume to the container's data directory for persistent storage.
-- **environment**: Defines environment variables to configure the Enclosed instance. You can adjust these values according to your needs.
+- **environment**: Defines environment variables to configure the shh.io instance. You can adjust these values according to your needs.
 - **restart**: Configures the container to always restart unless it is explicitly stopped.
 
 ### Persistent Storage
@@ -32,9 +32,9 @@ The `volumes` section in the `docker-compose.yml` file maps a named volume (`enc
 
 You can modify the environment variables under the `environment` section to customize your instance. For example, you can change the `PORT`, set different CORS origins, or adjust the note size limit.
 
-## Running Enclosed with Docker Compose
+## Running shh.io with Docker Compose
 
-Once you have your `docker-compose.yml` file configured, you can start the Enclosed service with the following commands:
+Once you have your `docker-compose.yml` file configured, you can start the shh.io service with the following commands:
 
 ### Download the Docker Compose File
 
@@ -46,7 +46,7 @@ curl -O https://raw.githubusercontent.com/geo-mena/shh.io/main/docker-compose.ym
 
 ### Start the Service
 
-To start Enclosed using Docker Compose, run:
+To start shh.io using Docker Compose, run:
 
 ```bash
 docker-compose up -d
@@ -54,13 +54,13 @@ docker-compose up -d
 
 - `-d`: Runs the containers in detached mode (in the background).
 
-This command will pull the Enclosed image if it is not already available locally, create the container, and start the application.
+This command will pull the shh.io image if it is not already available locally, create the container, and start the application.
 
 ### Managing the Service
 
 #### View Logs
 
-To view the logs for the Enclosed service, run:
+To view the logs for the shh.io service, run:
 
 ```bash
 docker-compose logs -f enclosed
@@ -68,7 +68,7 @@ docker-compose logs -f enclosed
 
 #### Stop the Service
 
-To stop the Enclosed service, use:
+To stop the shh.io service, use:
 
 ```bash
 docker-compose down
@@ -85,9 +85,9 @@ docker-compose down
 docker-compose up -d
 ```
 
-## Updating Enclosed
+## Updating shh.io
 
-To update your Enclosed instance to the latest version, pull the latest image and restart the service:
+To update your shh.io instance to the latest version, pull the latest image and restart the service:
 
 ```bash
 docker-compose pull enclosed
@@ -96,8 +96,8 @@ docker-compose up -d
 
 ## Advanced Configuration
 
-If you want to include additional services (like a reverse proxy or database) or manage more complex deployments, you can expand the `docker-compose.yml` file accordingly. Docker Compose allows for flexibility in defining multi-container applications, making it a powerful tool for managing your Enclosed instance.
+If you want to include additional services (like a reverse proxy or database) or manage more complex deployments, you can expand the `docker-compose.yml` file accordingly. Docker Compose allows for flexibility in defining multi-container applications, making it a powerful tool for managing your shh.io instance.
 
 ## Next Steps
 
-Once your Enclosed instance is up and running with Docker Compose, you can explore further customization options, integrate with other services, or set up monitoring and backups to ensure the smooth operation of your deployment.
+Once your shh.io instance is up and running with Docker Compose, you can explore further customization options, integrate with other services, or set up monitoring and backups to ensure the smooth operation of your deployment.

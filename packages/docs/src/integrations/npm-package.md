@@ -4,7 +4,7 @@
 This page is a work in progress.
 :::
 
-The shh.io lib is available as an npm package. You can use it to create and manage Enclosed notes.
+The shh.io lib is available as an npm package. You can use it to create and manage shh.io notes.
 
 ## Installation
 

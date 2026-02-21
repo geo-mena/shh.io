@@ -9,7 +9,7 @@ const createAbsoluteUrl = (path: string) => `https://shh.tofi.pro/${path.replace
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: 'Enclosed',
+  title: 'shh.io',
   description: 'Send private and secure notes',
   base: basePath,
   lang: 'en-US',
@@ -27,7 +27,7 @@ export default defineConfig({
 
   head: [
     ['meta', { name: 'author', content: 'Corentin Thomasset' }],
-    ['meta', { name: 'keywords', content: 'Enclosed, notes, secure, private, encrypted, self-hosted' }],
+    ['meta', { name: 'keywords', content: 'shh.io, notes, secure, private, encrypted, self-hosted' }],
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }],
     ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' }],
@@ -35,18 +35,18 @@ export default defineConfig({
 
     ['meta', { name: 'theme-color', content: '#ffffff' }],
 
-    ['meta', { name: 'og:title', content: 'Enclosed documentation' }],
+    ['meta', { name: 'og:title', content: 'shh.io documentation' }],
     ['meta', { name: 'og:description', content: 'Send private and secure notes' }],
     ['meta', { name: 'og:image', content: createAbsoluteUrl('og-image.png') }],
     ['meta', { name: 'og:url', content: 'https://shh.tofi.pro' }],
     ['meta', { name: 'og:type', content: 'website' }],
-    ['meta', { name: 'og:site_name', content: 'Enclosed' }],
+    ['meta', { name: 'og:site_name', content: 'shh.io' }],
     ['meta', { name: 'og:locale', content: 'en_US' }],
 
     ['meta', { name: 'twitter:card', content: 'summary' }],
     ['meta', { name: 'twitter:site', content: '@cthmsst' }],
     ['meta', { name: 'twitter:creator', content: '@cthmsst' }],
-    ['meta', { name: 'twitter:title', content: 'Enclosed documentation' }],
+    ['meta', { name: 'twitter:title', content: 'shh.io documentation' }],
     ['meta', { name: 'twitter:description', content: 'Send private and secure notes' }],
     ['meta', { name: 'twitter:image', content: createAbsoluteUrl('og-image.png') }],
 
@@ -61,16 +61,16 @@ export default defineConfig({
       alt: 'Logo',
     },
 
-    siteTitle: 'Enclosed - DOCS',
+    siteTitle: 'shh.io Docs',
 
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Enclosed App', link: 'https://shh.tofi.pro' },
+      { text: 'shh.io App', link: 'https://shh.tofi.pro' },
     ],
 
     sidebar: [
       {
-        text: 'Enclosed',
+        text: 'shh.io',
         items: [
           { text: 'Introduction', link: '/' },
           { text: 'How it works?', link: '/how-it-works' },

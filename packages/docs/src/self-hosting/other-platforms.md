@@ -2,13 +2,13 @@
 
 ## Railway
 
-To deploy Enclosed on Railway, you can use the following button to create a new pre-configured instance:
+To deploy shh.io on Railway, you can use the following button to create a new pre-configured instance:
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/5gOoRm?referralCode=CTHMSST)
 
 ## Umbrel
 
-To deploy Enclosed on umbrelOS, open the App Store on your umbrelOS home server and search for Enclosed.
+To deploy shh.io on umbrelOS, open the App Store on your umbrelOS home server and search for shh.io.
 [App Store link](https://apps.umbrel.com/app/enclosed)
 
 ## Cloudron
@@ -33,4 +33,4 @@ To deploy Enclosed on umbrelOS, open the App Store on your umbrelOS home server 
 
 ## Another platform?
 
-If you would like to see Enclosed available on another platform, please open an issue on the [GitHub repository](https://github.com/geo-mena/shh.io/issues/new/choose) with the details of the platform you would like to see supported.
+If you would like to see shh.io available on another platform, please open an issue on the [GitHub repository](https://github.com/geo-mena/shh.io/issues/new/choose) with the details of the platform you would like to see supported.

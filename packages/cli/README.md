@@ -19,7 +19,7 @@ cat file.txt | enclosed create
 enclosed create --deleteAfterReading --password "password" --ttl 3600 "Hello, World!"
 ```
 
-### Configure the enclosed instance to use
+### Configure the shh.io instance to use
 
 ```bash
 # By default, the CLI uses the public instance at shh.tofi.pro
@@ -65,7 +65,7 @@ enclosed view <note-url>
 enclosed view --password "password" <note-url>
 ```
 
-### Configure the enclosed instance to use
+### Configure the shh.io instance to use
 
 ```bash
 # By default, the CLI uses the public instance at shh.tofi.pro

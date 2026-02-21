@@ -4,7 +4,7 @@ outline: deep
 
 # How It Works
 
-Enclosed is designed with a focus on security and privacy, ensuring that your notes remain confidential from creation to retrieval. This section explains the entire process, from creating a note to decrypting it, highlighting the end-to-end encryption that makes Enclosed a secure platform.
+shh.io is designed with a focus on security and privacy, ensuring that your notes remain confidential from creation to retrieval. This section explains the entire process, from creating a note to decrypting it, highlighting the end-to-end encryption that makes shh.io a secure platform.
 
 ## 1. Note Creation
 

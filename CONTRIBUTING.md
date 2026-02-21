@@ -1,6 +1,6 @@
-# Contributing to Enclosed
+# Contributing to shh.io
 
-First off, thanks for taking the time to contribute to Enclosed! We welcome contributions of all types and encourage you to help make this project better for everyone.
+First off, thanks for taking the time to contribute to shh.io! We welcome contributions of all types and encourage you to help make this project better for everyone.
 
 ## Code of Conduct
 
@@ -53,7 +53,7 @@ We recommend running the app locally for development. Follow these steps:
 
    ```bash
    git clone https://github.com/geo-mena/shh.io.git
-   cd enclosed
+   cd shh.io
    ```
 
 2. Install dependencies:

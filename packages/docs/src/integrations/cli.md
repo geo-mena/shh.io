@@ -1,6 +1,6 @@
 # CLI Guide
 
-The Enclosed Command-Line Interface (CLI) allows you to create and manage secure notes directly from your terminal. This guide will walk you through installing the CLI, creating and viewing notes, and configuring the CLI for different use cases.
+The shh.io Command-Line Interface (CLI) allows you to create and manage secure notes directly from your terminal. This guide will walk you through installing the CLI, creating and viewing notes, and configuring the CLI for different use cases.
 
 ## Installation
 
@@ -96,16 +96,16 @@ You can provide the password directly with the `--password` option to avoid the 
 enclosed view --password "mypassword" <note-url>
 ```
 
-## Configuring the Enclosed Instance
+## Configuring the shh.io Instance
 
-By default, the CLI uses the public instance at [shh.tofi.pro](https://shh.tofi.pro). If you are running your own instance of Enclosed, you can configure the CLI to use your server.
+By default, the CLI uses the public instance at [shh.tofi.pro](https://shh.tofi.pro). If you are running your own instance of shh.io, you can configure the CLI to use your server.
 
 ### Set the Instance URL
 
 To set your instance URL, run:
 
 ```bash
-enclosed config set instance-url https://your-enclosed-instance.com
+enclosed config set instance-url https://your-shh-instance.com
 ```
 
 This command will configure the CLI to use your instance for creating and viewing notes.
