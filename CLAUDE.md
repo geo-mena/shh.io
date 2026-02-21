@@ -30,7 +30,7 @@
 ### Comments
 - Only when they add value: explain the WHY, never the WHAT.
 - If you need many comments, the code needs refactoring.
-- TODO/FIXME with context: `// TODO(geovanni): migrate to new API when v1 is deprecated`
+- TODO/FIXME with context: `// TODO(geomena): migrate to new API when v1 is deprecated`
 
 ## Legacy Code
 - Prioritize consistency with surrounding code over isolated "best practices".

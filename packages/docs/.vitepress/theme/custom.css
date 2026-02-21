@@ -1,6 +1,13 @@
 /* CSS variables available: https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css */
 
+@font-face {
+    font-family: 'Geist Pixel Square';
+    src: url('/fonts/GeistPixel-Square.woff2') format('woff2');
+    font-display: swap;
+}
+
 :root {
+    --vp-font-family-base: 'Geist Pixel Square', sans-serif;
     --vp-c-brand-1: #000000;
     --vp-c-brand-2: #000000;
 
