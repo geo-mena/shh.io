@@ -33,7 +33,7 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-          projectName: enclosed
+          projectName: shh
           deploymentName: Preview App
           directory: ${{ steps.preview-app-build-artifact.outputs.download-path }}
           wranglerVersion: '3'
@@ -58,7 +58,7 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-          projectName: enclosed-docs
+          projectName: shh-docs
           deploymentName: Preview Docs
           directory: ${{ steps.preview-docs-build-artifact.outputs.download-path }}
           wranglerVersion: '3'
