@@ -182,7 +182,7 @@ export const Navbar: Component = () => {
                                 {t('navbar.settings.report-bug')}
                             </DropdownMenuItem>
 
-                            <DropdownMenuItem as="a" class="flex items-center gap-2 cursor-pointer" target="_blank" href="https://buymeacoffee.com/cthmsst" rel="noopener noreferrer">
+                            <DropdownMenuItem as="a" class="flex items-center gap-2 cursor-pointer" target="_blank" href="https://github.com/sponsors/geo-mena" rel="noopener noreferrer">
                                 <div class="i-tabler-pig-money text-lg"></div>
                                 {t('navbar.settings.support')}
                             </DropdownMenuItem>
