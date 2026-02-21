@@ -1,6 +1,6 @@
 ### Enclosed lib
 
-This package contains the core functionalities of [Enclosed](https://enclosed.cc/), an open-source project that aims to provide a simple and secure way to share e2e encrypted notes.
+This package contains the core functionalities of [Enclosed](https://shh.tofi.pro/), an open-source project that aims to provide a simple and secure way to share e2e encrypted notes.
 
 ## Installation
 

@@ -4,14 +4,14 @@ Welcome to the Enclosed Brand Kit. Here, you'll find resources to help you repre
 
 ## Project Overview
 
-**Enclosed** is a minimalistic, secure web app enabling users to send encrypted notes and files with end-to-end security. The platform prioritizes user privacy by ensuring that servers have zero knowledge of the contents shared. For a complete overview of features, see the [README](https://github.com/geo-mena/enclosed).
+**Enclosed** is a minimalistic, secure web app enabling users to send encrypted notes and files with end-to-end security. The platform prioritizes user privacy by ensuring that servers have zero knowledge of the contents shared. For a complete overview of features, see the [README](https://github.com/geo-mena/shh.io).
 
 ### Quick Links
 
-- **Website**: [enclosed.cc](https://enclosed.cc)
-- **Documentation**: [docs.enclosed.cc](https://docs.enclosed.cc)
-- **GitHub Repository**: [github.com/geo-mena/enclosed](https://github.com/geo-mena/enclosed)
-- **Live instance**: [Try it here](https://enclosed.cc)
+- **Website**: [shh.tofi.pro](https://shh.tofi.pro)
+- **Documentation**: [docs-shh.tofi.pro](https://docs-shh.tofi.pro)
+- **GitHub Repository**: [github.com/geo-mena/shh.io](https://github.com/geo-mena/shh.io)
+- **Live instance**: [Try it here](https://shh.tofi.pro)
 
 ## Logo Assets
 
@@ -56,10 +56,10 @@ You can use this banner to promote Enclosed on social media platforms.
 - **Open Source**: The source code is available under the Apache 2.0 License.
 - **Self-Hostable**: Run your instance of Enclosed for private note sharing.
 - **CLI**: A command-line interface for creating notes from the terminal.
-- **Very low environmental impact**: the app and the docs is rated A+ on websitecarbon.com (see [here](https://www.websitecarbon.com/website/enclosed-cc/) and [here](https://www.websitecarbon.com/website/docs-enclosed-cc/)).
+- **Very low environmental impact**: the app and the docs is rated A+ on websitecarbon.com (see [here](https://www.websitecarbon.com/website/shh-tofi-pro/) and [here](https://www.websitecarbon.com/website/docs-shh-tofi-pro/)).
 
 ## Media Contact
 
 For media inquiries, please reach out to the project creator [Corentin Thomasset](https://corentin.tech).
 
-If you have any specific branding requests or require additional assets, please open an issue on our [GitHub repository](https://github.com/geo-mena/enclosed).
+If you have any specific branding requests or require additional assets, please open an issue on our [GitHub repository](https://github.com/geo-mena/shh.io).

@@ -61,7 +61,7 @@ const LanguageSwitcher: Component = () => {
 
       <DropdownMenuSeparator />
 
-      <DropdownMenuItem as="a" class="flex items-center gap-2 cursor-pointer" target="_blank" rel="noopener noreferrer" href="https://github.com/geo-mena/enclosed/tree/main/packages/app-client/src/locales">
+      <DropdownMenuItem as="a" class="flex items-center gap-2 cursor-pointer" target="_blank" rel="noopener noreferrer" href="https://github.com/geo-mena/shh.io/tree/main/packages/app-client/src/locales">
         {t('navbar.settings.contribute-to-i18n')}
         <div class="i-tabler-external-link text-lg text-muted-foreground"></div>
       </DropdownMenuItem>
@@ -107,7 +107,7 @@ export const Navbar: Component = () => {
             </Button>
           )}
 
-          <Button variant="ghost" class="text-lg px-0 size-9 hidden md:inline-flex" as={A} href="https://github.com/geo-mena/enclosed" target="_blank" rel="noopener noreferrer" aria-label={t('navbar.github-repository')}>
+          <Button variant="ghost" class="text-lg px-0 size-9 hidden md:inline-flex" as={A} href="https://github.com/geo-mena/shh.io" target="_blank" rel="noopener noreferrer" aria-label={t('navbar.github-repository')}>
             <div class="i-tabler-brand-github"></div>
           </Button>
 
@@ -139,7 +139,7 @@ export const Navbar: Component = () => {
             <DropdownMenuContent class="w-46">
 
               {/* Mobile only items */}
-              <DropdownMenuItem as="a" class="flex items-center gap-2 cursor-pointer md:hidden" target="_blank" href="https://github.com/geo-mena/enclosed" rel="noopener noreferrer">
+              <DropdownMenuItem as="a" class="flex items-center gap-2 cursor-pointer md:hidden" target="_blank" href="https://github.com/geo-mena/shh.io" rel="noopener noreferrer">
                 <div class="i-tabler-brand-github text-lg"></div>
                 {t('navbar.github')}
               </DropdownMenuItem>
@@ -177,7 +177,7 @@ export const Navbar: Component = () => {
                 {t('navbar.settings.cli')}
               </DropdownMenuItem>
 
-              <DropdownMenuItem as="a" class="flex items-center gap-2 cursor-pointer" target="_blank" href="https://github.com/geo-mena/enclosed/issues/new/choose" rel="noopener noreferrer">
+              <DropdownMenuItem as="a" class="flex items-center gap-2 cursor-pointer" target="_blank" href="https://github.com/geo-mena/shh.io/issues/new/choose" rel="noopener noreferrer">
                 <div class="i-tabler-bug text-lg"></div>
                 {t('navbar.settings.report-bug')}
               </DropdownMenuItem>
@@ -227,7 +227,7 @@ export const Footer: Component = () => {
       {/* <div>
         {t('footer.version')}
         {' '}
-        <Button variant="link" as="a" href={`https://github.com/geo-mena/enclosed/tree/v${buildTimeConfig.enclosedVersion}`} target="_blank" class="p-0 text-muted-foreground underline hover:text-primary transition font-normal h-auto">
+        <Button variant="link" as="a" href={`https://github.com/geo-mena/shh.io/tree/v${buildTimeConfig.enclosedVersion}`} target="_blank" class="p-0 text-muted-foreground underline hover:text-primary transition font-normal h-auto">
           v
           {buildTimeConfig.enclosedVersion}
         </Button>

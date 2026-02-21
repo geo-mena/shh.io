@@ -5,7 +5,7 @@ import { githubIcon, xIcon } from './theme/icons';
 
 const basePath = process.env.DOCS_BASE_PATH; // undefined for root /
 
-const createAbsoluteUrl = (path: string) => `https://enclosed.cc/${path.replace(/(^\/$)/g, '')}`;
+const createAbsoluteUrl = (path: string) => `https://shh.tofi.pro/${path.replace(/(^\/$)/g, '')}`;
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -38,7 +38,7 @@ export default defineConfig({
     ['meta', { name: 'og:title', content: 'Enclosed documentation' }],
     ['meta', { name: 'og:description', content: 'Send private and secure notes' }],
     ['meta', { name: 'og:image', content: createAbsoluteUrl('og-image.png') }],
-    ['meta', { name: 'og:url', content: 'https://enclosed.cc' }],
+    ['meta', { name: 'og:url', content: 'https://shh.tofi.pro' }],
     ['meta', { name: 'og:type', content: 'website' }],
     ['meta', { name: 'og:site_name', content: 'Enclosed' }],
     ['meta', { name: 'og:locale', content: 'en_US' }],
@@ -65,7 +65,7 @@ export default defineConfig({
 
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Enclosed App', link: 'https://enclosed.cc' },
+      { text: 'Enclosed App', link: 'https://shh.tofi.pro' },
     ],
 
     sidebar: [
@@ -108,12 +108,12 @@ export default defineConfig({
     },
 
     editLink: {
-      pattern: 'https://github.com/geo-mena/enclosed/edit/main/packages/docs/src/:path',
+      pattern: 'https://github.com/geo-mena/shh.io/edit/main/packages/docs/src/:path',
       text: 'Edit this page on GitHub',
     },
 
     socialLinks: [
-      { icon: { svg: githubIcon }, link: 'https://github.com/geo-mena/enclosed', ariaLabel: 'GitHub' },
+      { icon: { svg: githubIcon }, link: 'https://github.com/geo-mena/shh.io', ariaLabel: 'GitHub' },
       { icon: { svg: xIcon }, link: 'https://x.com/cthmsst', ariaLabel: 'X' },
     ],
 

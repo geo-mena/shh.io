@@ -7,7 +7,7 @@
   "author": "Corentin Thomasset <corentinth@proton.me> (https://corentin.tech)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/geo-mena/enclosed"
+    "url": "https://github.com/geo-mena/shh.io"
   },
   "engines": {
     "node": ">=22.0.0"

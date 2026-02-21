@@ -41,8 +41,8 @@ body:
     attributes:
       label: Where did you encounter the bug?
       options:
-        - Public app (enclosed.cc)
-        - Documentation website (docs.enclosed.cc)
+        - Public app (shh.tofi.pro)
+        - Documentation website (docs-shh.tofi.pro)
         - A self hosted instance
         - Other (installations, docker, etc.)
     validations:

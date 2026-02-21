@@ -1,6 +1,6 @@
 services:
   enclosed:
-    image: corentinth/enclosed
+    image: geo-mena/shh
     ports:
       - 8787:8787
     volumes:

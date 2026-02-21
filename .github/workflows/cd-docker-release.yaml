@@ -179,10 +179,10 @@ jobs:
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: true
           tags: |
-            corentinth/enclosed:latest
-            corentinth/enclosed:${{ env.RELEASE_VERSION }}
-            ghcr.io/corentinth/enclosed:latest
-            ghcr.io/corentinth/enclosed:${{ env.RELEASE_VERSION}}
+            geo-mena/shh:latest
+            geo-mena/shh:${{ env.RELEASE_VERSION }}
+            ghcr.io/geo-mena/shh:latest
+            ghcr.io/geo-mena/shh:${{ env.RELEASE_VERSION}}
 
       - name: Build and push rootless Docker image
         uses: docker/build-push-action@v6
@@ -192,7 +192,7 @@ jobs:
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: true
           tags: |
-            corentinth/enclosed:latest-rootless
-            corentinth/enclosed:${{ env.RELEASE_VERSION }}-rootless
-            ghcr.io/corentinth/enclosed:latest-rootless
-            ghcr.io/corentinth/enclosed:${{ env.RELEASE_VERSION }}-rootless
+            geo-mena/shh:latest-rootless
+            geo-mena/shh:${{ env.RELEASE_VERSION }}-rootless
+            ghcr.io/geo-mena/shh:latest-rootless
+            ghcr.io/geo-mena/shh:${{ env.RELEASE_VERSION }}-rootless

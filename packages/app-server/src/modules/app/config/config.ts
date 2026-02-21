@@ -221,7 +221,7 @@ export const configDefinition = {
       env: 'AUTHENTICATION_JWT_DURATION_SECONDS',
     },
     authUsers: {
-      doc: 'The list of users allowed to authenticate. Comma-separated list of email and bcrypt password hash, like: `email1:passwordHash1,email2:passwordHash2`. Easily generate the value for this env variable here: https://docs.enclosed.cc/self-hosting/users-authentication-key-generator',
+      doc: 'The list of users allowed to authenticate. Comma-separated list of email and bcrypt password hash, like: `email1:passwordHash1,email2:passwordHash2`. Easily generate the value for this env variable here: https://docs-shh.tofi.pro/self-hosting/users-authentication-key-generator',
       schema: z
         .string()
         .transform((value) => {

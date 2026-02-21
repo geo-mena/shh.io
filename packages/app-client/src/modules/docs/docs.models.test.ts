@@ -8,22 +8,22 @@ describe('docs models', () => {
         buildDocUrl({
           path: '/test',
 
-          baseUrl: 'https://docs.enclosed.cc',
+          baseUrl: 'https://docs-shh.tofi.pro',
         }),
-      ).to.eql('https://docs.enclosed.cc/test');
+      ).to.eql('https://docs-shh.tofi.pro/test');
     });
 
     test('it uses the default base url', () => {
-      expect(buildDocUrl({ path: '/test' })).to.eql('https://docs.enclosed.cc/test');
+      expect(buildDocUrl({ path: '/test' })).to.eql('https://docs-shh.tofi.pro/test');
     });
 
     test('it handles clashing slashes', () => {
       expect(
         buildDocUrl({
           path: '/test',
-          baseUrl: 'https://docs.enclosed.cc/',
+          baseUrl: 'https://docs-shh.tofi.pro/',
         }),
-      ).to.eql('https://docs.enclosed.cc/test');
+      ).to.eql('https://docs-shh.tofi.pro/test');
     });
   });
 });

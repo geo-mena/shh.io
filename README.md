@@ -14,13 +14,13 @@
 </p>
 
 <p align="center">
-  <a href="https://enclosed.cc">Demo</a>
+  <a href="https://shh.tofi.pro">Demo</a>
   <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-  <a href="https://docs.enclosed.cc">Docs</a>
+  <a href="https://docs-shh.tofi.pro">Docs</a>
   <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
   <a href="https://www.npmjs.com/package/@enclosed/cli">CLI</a>
   <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-  <a href="https://docs.enclosed.cc/self-hosting/docker">Self-hosting</a>
+  <a href="https://docs-shh.tofi.pro/self-hosting/docker">Self-hosting</a>
 </p>
 
 ## Introduction
@@ -29,9 +29,9 @@
 
 All notes are end-to-end encrypted, ensuring that the server and storage have zero knowledge of the content. Users can set a password, define an expiration period (TTL), and choose to have the note self-destruct after being read.
 
-A live instance is available at [enclosed.cc](https://enclosed.cc).
+A live instance is available at [shh.tofi.pro](https://shh.tofi.pro).
 
-[![Enclosed](./.github/enclosed-mockup.png)](https://enclosed.cc)
+[![Enclosed](./.github/enclosed-mockup.png)](https://shh.tofi.pro)
 
 ## Features
 
@@ -47,7 +47,7 @@ A live instance is available at [enclosed.cc](https://enclosed.cc).
 - **Open Source**: The source code is available under the Apache 2.0 License.
 - **Self-Hostable**: Run your instance of Enclosed for private note sharing.
 - **CLI**: A command-line interface for creating notes from the terminal.
-- **Very low environmental impact**: the app and the docs is rated A+ on websitecarbon.com (see [here](https://www.websitecarbon.com/website/enclosed-cc/) and [here](https://www.websitecarbon.com/website/docs-enclosed-cc/)).
+- **Very low environmental impact**: the app and the docs is rated A+ on websitecarbon.com (see [here](https://www.websitecarbon.com/website/shh-tofi-pro/) and [here](https://www.websitecarbon.com/website/docs-shh-tofi-pro/)).
 
 ## Self host
 
@@ -56,21 +56,21 @@ A live instance is available at [enclosed.cc](https://enclosed.cc).
 You can quickly run the application using Docker.
 
 ```bash
-docker run -d --name enclosed --restart unless-stopped -p 8787:8787 corentinth/enclosed
+docker run -d --name enclosed --restart unless-stopped -p 8787:8787 geo-mena/shh
 ```
 
 ### To go further
 
-Please refer to the [self-hosting documentation](https://docs.enclosed.cc/self-hosting/docker) for more information on how to configure and run the application.
+Please refer to the [self-hosting documentation](https://docs-shh.tofi.pro/self-hosting/docker) for more information on how to configure and run the application.
 For example:
 
-- [Setup persistent storage](https://docs.enclosed.cc/self-hosting/docker#docker-with-volume-persistence)
-- [Use rootless image](https://docs.enclosed.cc/self-hosting/docker#rootless-and-non-rootless-docker-images)
-- [Use Docker Compose](https://docs.enclosed.cc/self-hosting/docker-compose)
+- [Setup persistent storage](https://docs-shh.tofi.pro/self-hosting/docker#docker-with-volume-persistence)
+- [Use rootless image](https://docs-shh.tofi.pro/self-hosting/docker#rootless-and-non-rootless-docker-images)
+- [Use Docker Compose](https://docs-shh.tofi.pro/self-hosting/docker-compose)
 
 ### Configuration
 
-You can refer to the [configuration documentation](https://docs.enclosed.cc/self-hosting/configuration) for more information on how to configure the application.
+You can refer to the [configuration documentation](https://docs-shh.tofi.pro/self-hosting/configuration) for more information on how to configure the application.
 
 ## How It Works
 
@@ -133,8 +133,8 @@ enclosed view --password "password" <note-url>
 ### Configure the enclosed instance to use
 
 ```bash
-# By default, the CLI uses the public instance at enclosed.cc
-enclosed config set instance-url https://enclosed.cc
+# By default, the CLI uses the public instance at shh.tofi.pro
+enclosed config set instance-url https://shh.tofi.pro
 ```
 
 ## Project Structure
@@ -150,7 +150,7 @@ This project is organized as a monorepo using `pnpm` workspaces. The structure i
 ## Contributing
 
 Contributions are welcome! Please refer to the [`CONTRIBUTING.md`](./CONTRIBUTING.md) file for guidelines on how to get started, report issues, and submit pull requests.
-You can find easy-to-pick-up tasks with the [`good first issue` label](https://github.com/geo-mena/enclosed/issues?q=sort%3Aupdated-desc+is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22).
+You can find easy-to-pick-up tasks with the [`good first issue` label](https://github.com/geo-mena/shh.io/issues?q=sort%3Aupdated-desc+is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22).
 
 ## License
 
@@ -163,7 +163,7 @@ If you find this project helpful, please consider [supporting my work](https://b
 
 Thank you to all the contributors who have helped make Enclosed better!
 
-[![Contributors](https://contrib.rocks/image?repo=CorentinTh/enclosed)](https://github.com/geo-mena/enclosed/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=geo-mena/shh.io)](https://github.com/geo-mena/shh.io/graphs/contributors)
 
 ### Stack
 
@@ -183,7 +183,7 @@ Enclosed would not have been possible without the following open-source projects
 
 ### Hosting
 
-The [live instance](https://enclosed.cc) of Enclosed is hosted on [Cloudflare Pages](https://pages.cloudflare.com/) using [Cloudflare KV](https://developers.cloudflare.com/kv/) for storage.
+The [live instance](https://shh.tofi.pro) of Enclosed is hosted on [Cloudflare Pages](https://pages.cloudflare.com/) using [Cloudflare KV](https://developers.cloudflare.com/kv/) for storage.
 
 ### Inspiration
 

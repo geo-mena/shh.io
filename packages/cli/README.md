@@ -1,6 +1,6 @@
 # Enclosed CLI
 
-This package contains the CLI for [Enclosed](https://enclosed.cc), an open-source project that aims to provide a simple and secure way to share e2e encrypted notes.
+This package contains the CLI for [Enclosed](https://shh.tofi.pro), an open-source project that aims to provide a simple and secure way to share e2e encrypted notes.
 
 ## Getting Started
 
@@ -22,8 +22,8 @@ enclosed create --deleteAfterReading --password "password" --ttl 3600 "Hello, Wo
 ### Configure the enclosed instance to use
 
 ```bash
-# By default, the CLI uses the public instance at enclosed.cc
-enclosed config set instance-url https://enclosed.cc
+# By default, the CLI uses the public instance at shh.tofi.pro
+enclosed config set instance-url https://shh.tofi.pro
 ```
 
 ## Usage
@@ -68,8 +68,8 @@ enclosed view --password "password" <note-url>
 ### Configure the enclosed instance to use
 
 ```bash
-# By default, the CLI uses the public instance at enclosed.cc
-enclosed config set instance-url https://enclosed.cc
+# By default, the CLI uses the public instance at shh.tofi.pro
+enclosed config set instance-url https://shh.tofi.pro
 ```
 
 ## License

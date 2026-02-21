@@ -14,23 +14,23 @@ To deploy Enclosed on umbrelOS, open the App Store on your umbrelOS home server 
 ## Cloudron
 
 > [!INFO]
-> Not yet available. Please refer to the [GitHub issue](https://github.com/geo-mena/enclosed/issues/87) for updates about Cloudron support.
+> Not yet available. Please refer to the [GitHub issue](https://github.com/geo-mena/shh.io/issues/87) for updates about Cloudron support.
 
 ## RunTipi
 
 > [!INFO]
-> Not yet available. Please refer to the [GitHub issue](https://github.com/geo-mena/enclosed/issues/88) for updates about RunTipi support.
+> Not yet available. Please refer to the [GitHub issue](https://github.com/geo-mena/shh.io/issues/88) for updates about RunTipi support.
 
 ## Unraid
 
 > [!INFO]
-> Not yet available. Please refer to the [GitHub issue](https://github.com/geo-mena/enclosed/issues/89) for updates about Unraid support.
+> Not yet available. Please refer to the [GitHub issue](https://github.com/geo-mena/shh.io/issues/89) for updates about Unraid support.
 
 ## CasaOS
 
 > [!INFO]
-> Not yet available. Please refer to the [GitHub issue](https://github.com/geo-mena/enclosed/issues/261) for updates about CasaOS support.
+> Not yet available. Please refer to the [GitHub issue](https://github.com/geo-mena/shh.io/issues/261) for updates about CasaOS support.
 
 ## Another platform?
 
-If you would like to see Enclosed available on another platform, please open an issue on the [GitHub repository](https://github.com/geo-mena/enclosed/issues/new/choose) with the details of the platform you would like to see supported.
+If you would like to see Enclosed available on another platform, please open an issue on the [GitHub repository](https://github.com/geo-mena/shh.io/issues/new/choose) with the details of the platform you would like to see supported.

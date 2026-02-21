@@ -1,6 +1,6 @@
 # Enclosed crypto library
 
-This package contains the natives crypto primitives used by the [Enclosed lib and project](https://enclosed.cc). It is a standalone package built to provide compatibility between different environments by exposing the same API for node:crypto and web SubtleCrypto.
+This package contains the natives crypto primitives used by the [Enclosed lib and project](https://shh.tofi.pro). It is a standalone package built to provide compatibility between different environments by exposing the same API for node:crypto and web SubtleCrypto.
 
 ## Installation
 

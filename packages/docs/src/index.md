@@ -22,7 +22,7 @@ The name **Enclosed** is inspired by the idea of keeping your notes safe and sec
 - **Open Source**: The source code is available under the Apache 2.0 License, allowing for community contributions and self-hosting.
 - **Self-Hostable**: Run your instance of Enclosed to maintain complete control over your note-sharing environment.
 - **CLI**: A command-line interface is available for creating and managing notes directly from your terminal.
-- **Very low environmental impact**: the app and the docs is rated A+ on websitecarbon.com (see [here](https://www.websitecarbon.com/website/enclosed-cc/) and [here](https://www.websitecarbon.com/website/docs-enclosed-cc/)).
+- **Very low environmental impact**: the app and the docs is rated A+ on websitecarbon.com (see [here](https://www.websitecarbon.com/website/shh-tofi-pro/) and [here](https://www.websitecarbon.com/website/docs-shh-tofi-pro/)).
 
 ## Why Enclosed?
 
@@ -32,4 +32,4 @@ By leveraging client-side encryption and a zero-knowledge server, Enclosed guara
 
 ## Get Started
 
-Ready to start using Enclosed? You can [try it out online](https://enclosed.cc) or [self-host](./self-hosting/docker) your instance for maximum control. Dive into our documentation to learn more about how Enclosed works and how you can take full advantage of its features.
+Ready to start using Enclosed? You can [try it out online](https://shh.tofi.pro) or [self-host](./self-hosting/docker) your instance for maximum control. Dive into our documentation to learn more about how Enclosed works and how you can take full advantage of its features.

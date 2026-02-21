@@ -98,7 +98,7 @@ enclosed view --password "mypassword" <note-url>
 
 ## Configuring the Enclosed Instance
 
-By default, the CLI uses the public instance at [enclosed.cc](https://enclosed.cc). If you are running your own instance of Enclosed, you can configure the CLI to use your server.
+By default, the CLI uses the public instance at [shh.tofi.pro](https://shh.tofi.pro). If you are running your own instance of Enclosed, you can configure the CLI to use your server.
 
 ### Set the Instance URL
 
