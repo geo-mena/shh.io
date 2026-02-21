@@ -9,7 +9,7 @@ Welcome to the shh.io Brand Kit. Here, you'll find resources to help you represe
 ### Quick Links
 
 - **Website**: [shh.tofi.pro](https://shh.tofi.pro)
-- **Documentation**: [docs-shh.tofi.pro](https://docs-shh.tofi.pro)
+- **Documentation**: [shh-docs.tofi.pro](https://shh-docs.tofi.pro)
 - **GitHub Repository**: [github.com/geo-mena/shh.io](https://github.com/geo-mena/shh.io)
 - **Live instance**: [Try it here](https://shh.tofi.pro)
 

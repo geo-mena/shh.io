@@ -16,11 +16,11 @@
 <p align="center">
   <a href="https://shh.tofi.pro">Demo</a>
   <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-  <a href="https://docs-shh.tofi.pro">Docs</a>
+  <a href="https://shh-docs.tofi.pro">Docs</a>
   <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
   <a href="https://www.npmjs.com/package/@geomena/cli">CLI</a>
   <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-  <a href="https://docs-shh.tofi.pro/self-hosting/docker">Self-hosting</a>
+  <a href="https://shh-docs.tofi.pro/self-hosting/docker">Self-hosting</a>
 </p>
 
 ## Introduction
@@ -61,16 +61,16 @@ docker run -d --name enclosed --restart unless-stopped -p 8787:8787 geo-mena/shh
 
 ### To go further
 
-Please refer to the [self-hosting documentation](https://docs-shh.tofi.pro/self-hosting/docker) for more information on how to configure and run the application.
+Please refer to the [self-hosting documentation](https://shh-docs.tofi.pro/self-hosting/docker) for more information on how to configure and run the application.
 For example:
 
-- [Setup persistent storage](https://docs-shh.tofi.pro/self-hosting/docker#docker-with-volume-persistence)
-- [Use rootless image](https://docs-shh.tofi.pro/self-hosting/docker#rootless-and-non-rootless-docker-images)
-- [Use Docker Compose](https://docs-shh.tofi.pro/self-hosting/docker-compose)
+- [Setup persistent storage](https://shh-docs.tofi.pro/self-hosting/docker#docker-with-volume-persistence)
+- [Use rootless image](https://shh-docs.tofi.pro/self-hosting/docker#rootless-and-non-rootless-docker-images)
+- [Use Docker Compose](https://shh-docs.tofi.pro/self-hosting/docker-compose)
 
 ### Configuration
 
-You can refer to the [configuration documentation](https://docs-shh.tofi.pro/self-hosting/configuration) for more information on how to configure the application.
+You can refer to the [configuration documentation](https://shh-docs.tofi.pro/self-hosting/configuration) for more information on how to configure the application.
 
 ## How It Works
 
