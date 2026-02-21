@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "Enclosed",
+    "title": "shh.io",
     "description": "Wysyłaj prywatne i bezpieczne notatki"
   },
   "insecureContextWarning": {
@@ -24,8 +24,8 @@
     },
     "settings": {
       "documentation": "Dokumentacja",
-      "cli": "Enclosed CLI",
-      "support": "Wspieraj Enclosed",
+      "cli": "shh.io CLI",
+      "support": "Wspieraj shh.io",
       "report-bug": "Zgłoś błąd",
       "logout": "Wyloguj",
       "contribute-to-i18n": "Współtwórz tłumaczenie"
@@ -38,8 +38,8 @@
     "version": "Wersja"
   },
   "login": {
-    "title": "Zaloguj się do Enclosed",
-    "description": "To jest prywatna instancja Enclosed. Wprowadź swoje dane, aby móc tworzyć notatki.",
+    "title": "Zaloguj się do shh.io",
+    "description": "To jest prywatna instancja shh.io. Wprowadź swoje dane, aby móc tworzyć notatki.",
     "email": "E-mail",
     "password": "Hasło",
     "submit": "Zaloguj się",

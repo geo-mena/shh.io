@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "Enclosed",
+    "title": "shh.io",
     "description": "Envoyez des notes privées et sécurisées"
   },
   "insecureContextWarning": {
@@ -24,8 +24,8 @@
     },
     "settings": {
       "documentation": "Documentation",
-      "cli": "Enclosed CLI",
-      "support": "Soutenir Enclosed",
+      "cli": "shh.io CLI",
+      "support": "Soutenir shh.io",
       "report-bug": "Signaler un bug",
       "logout": "Se déconnecter",
       "contribute-to-i18n": "Contribuer à l'i18n"
@@ -38,8 +38,8 @@
     "version": "Version"
   },
   "login": {
-    "title": "Connexion à Enclosed",
-    "description": "Ceci est une instance privée de Enclosed. Entrez vos identifiants pour pouvoir créer des notes.",
+    "title": "Connexion à shh.io",
+    "description": "Ceci est une instance privée de shh.io. Entrez vos identifiants pour pouvoir créer des notes.",
     "email": "Email",
     "password": "Mot de passe",
     "submit": "Se connecter",
@@ -136,7 +136,6 @@
       "description": "Cette note sera supprimée après lecture. Une fois affichée, elle sera définitivement supprimée et ne pourra pas être récupérée.",
       "confirm": "Je comprends, montrer la note"
     },
-
     "error": {
       "invalid-url": {
         "title": "URL de note invalide",

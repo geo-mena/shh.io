@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "Enclosed",
+    "title": "shh.io",
     "description": "Gửi ghi chú riêng tư và bảo mật"
   },
   "insecureContextWarning": {
@@ -24,8 +24,8 @@
     },
     "settings": {
       "documentation": "Tài liệu",
-      "cli": "Enclosed CLI",
-      "support": "Hỗ trợ Enclosed",
+      "cli": "shh.io CLI",
+      "support": "Hỗ trợ shh.io",
       "report-bug": "Báo cáo lỗi",
       "logout": "Đăng xuất",
       "contribute-to-i18n": "Đóng góp dịch thuật"
@@ -38,8 +38,8 @@
     "version": "Phiên bản"
   },
   "login": {
-    "title": "Đăng nhập Enclosed",
-    "description": "Đây là một phiên bản riêng tư của Enclosed. Nhập thông tin đăng nhập của bạn để có thể tạo ghi chú.",
+    "title": "Đăng nhập shh.io",
+    "description": "Đây là một phiên bản riêng tư của shh.io. Nhập thông tin đăng nhập của bạn để có thể tạo ghi chú.",
     "email": "Email",
     "password": "Mật khẩu",
     "submit": "Đăng nhập",

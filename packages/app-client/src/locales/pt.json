@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "Enclosed",
+    "title": "shh.io",
     "description": "Envia notas de forma privada e segura"
   },
   "insecureContextWarning": {
@@ -19,8 +19,8 @@
     },
     "settings": {
       "documentation": "Documentação",
-      "cli": "Enclosed CLI",
-      "support": "Ajudar Enclosed",
+      "cli": "shh.io CLI",
+      "support": "Ajudar shh.io",
       "report-bug": "Reportar erro",
       "logout": "Terminar sessão",
       "contribute-to-i18n": "Contribuir para i18n"
@@ -33,8 +33,8 @@
     "version": "Versão"
   },
   "login": {
-    "title": "Iniciar sessão no Enclosed",
-    "description": "Esta é uma instância privada do Enclosed. Insere as tuas credenciais para poderes criar notas.",
+    "title": "Iniciar sessão no shh.io",
+    "description": "Esta é uma instância privada do shh.io. Insere as tuas credenciais para poderes criar notas.",
     "email": "Email",
     "password": "Palavra-passe",
     "submit": "Iniciar sessão",
@@ -42,7 +42,10 @@
       "invalid-credentials": "Email ou palavra-passe inválidos.",
       "unknown": "Ocorreu um erro. Tenta outra vez mais tarde."
     },
-    "footer": ["Não tens conta?", "Contacta o criador da instância."]
+    "footer": [
+      "Não tens conta?",
+      "Contacta o criador da instância."
+    ]
   },
   "create": {
     "errors": {

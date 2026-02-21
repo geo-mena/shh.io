@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "Enclosed",
+    "title": "shh.io",
     "description": "Отправляйте приватные и защищенные заметки"
   },
   "insecureContextWarning": {
@@ -17,8 +17,8 @@
     },
     "settings": {
       "documentation": "Документация",
-      "cli": "Enclosed CLI",
-      "support": "Поддержать Enclosed",
+      "cli": "shh.io CLI",
+      "support": "Поддержать shh.io",
       "report-bug": "Сообщить об ошибке",
       "logout": "Выйти",
       "contribute-to-i18n": "Внести свой вклад в i18n"
@@ -31,8 +31,8 @@
     "version": "Версия"
   },
   "login": {
-    "title": "Войти в Enclosed",
-    "description": "Это приватный режим Enclosed. Введите учётные данные, чтобы создать заметку.",
+    "title": "Войти в shh.io",
+    "description": "Это приватный режим shh.io. Введите учётные данные, чтобы создать заметку.",
     "email": "Электронная почта",
     "password": "Пароль",
     "submit": "Логин",

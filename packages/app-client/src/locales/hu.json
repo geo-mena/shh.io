@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "Enclosed",
+    "title": "shh.io",
     "description": "Küldj privát és biztonságos jegyzeteket"
   },
   "insecureContextWarning": {
@@ -19,8 +19,8 @@
     },
     "settings": {
       "documentation": "Dokumentáció",
-      "cli": "Enclosed CLI",
-      "support": "Támogasd az Enclosed-ot",
+      "cli": "shh.io CLI",
+      "support": "Támogasd az shh.io-ot",
       "report-bug": "Hiba bejelentése",
       "logout": "Kijelentkezés",
       "contribute-to-i18n": "Közreműködés az i18n-ben"
@@ -33,8 +33,8 @@
     "version": "Verzió"
   },
   "login": {
-    "title": "Bejelentkezés az Enclosedba",
-    "description": "Ez az Enclosed egy privát példánya. Add meg hitelesítő adataidat a jegyzetek létrehozásához.",
+    "title": "Bejelentkezés az shh.ioba",
+    "description": "Ez az shh.io egy privát példánya. Add meg hitelesítő adataidat a jegyzetek létrehozásához.",
     "email": "Email",
     "password": "Jelszó",
     "submit": "Bejelentkezés",
@@ -44,7 +44,7 @@
     },
     "footer": [
       "Nincs fiókod?",
-      "Vedd fel a kapcsolatot az Enclosed privát példányának tulajdonosával."
+      "Vedd fel a kapcsolatot az shh.io privát példányának tulajdonosával."
     ]
   },
   "create": {

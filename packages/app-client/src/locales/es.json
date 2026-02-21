@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "Enclosed",
+    "title": "shh.io",
     "description": "Enviar notas privadas y seguras"
   },
   "insecureContextWarning": {
@@ -17,8 +17,8 @@
     },
     "settings": {
       "documentation": "Documentación",
-      "cli": "Enclosed CLI",
-      "support": "Soporte Enclosed",
+      "cli": "shh.io CLI",
+      "support": "Soporte shh.io",
       "report-bug": "Reportar un error",
       "logout": "Cerrar sesión",
       "contribute-to-i18n": "Contribuir a i18n"
@@ -31,8 +31,8 @@
     "version": "Versión"
   },
   "login": {
-    "title": "Iniciar sesión en Enclosed",
-    "description": "Esta es una instancia privada de Enclosed. Introduzca sus credenciales para poder crear notas.",
+    "title": "Iniciar sesión en shh.io",
+    "description": "Esta es una instancia privada de shh.io. Introduzca sus credenciales para poder crear notas.",
     "email": "Correo electrónico",
     "password": "Contraseña",
     "submit": "Iniciar sesión",

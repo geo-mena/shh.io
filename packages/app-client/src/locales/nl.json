@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "Enclosed",
+    "title": "shh.io",
     "description": "Privé en beveiligde notities versturen"
   },
   "insecureContextWarning": {
@@ -20,7 +20,7 @@
     "settings": {
       "documentation": "Documentatie",
       "cli": "Bijgesloten CLI",
-      "support": "Ondersteun Enclosed",
+      "support": "Ondersteun shh.io",
       "report-bug": "Meld een bug",
       "logout": "Uitloggen",
       "contribute-to-i18n": "Bijdragen aan i18n"
@@ -33,8 +33,8 @@
     "version": "Versie"
   },
   "login": {
-    "title": "Inloggen op Enclosed",
-    "description": "Dit is een privé-instantie van Enclosed. Voer je gegevens in om notities te kunnen maken.",
+    "title": "Inloggen op shh.io",
+    "description": "Dit is een privé-instantie van shh.io. Voer je gegevens in om notities te kunnen maken.",
     "email": "Email",
     "password": "Wachtwoord",
     "submit": "Inloggen",

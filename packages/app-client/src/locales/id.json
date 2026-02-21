@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "Enclosed",
+    "title": "shh.io",
     "description": "Kirim catatan pribadi dan aman"
   },
   "insecureContextWarning": {
@@ -24,8 +24,8 @@
     },
     "settings": {
       "documentation": "Dokumentasi",
-      "cli": "Enclosed CLI",
-      "support": "Dukung Enclosed",
+      "cli": "shh.io CLI",
+      "support": "Dukung shh.io",
       "report-bug": "Laporkan bug",
       "logout": "Keluar",
       "contribute-to-i18n": "Berkontribusi pada i18n"
@@ -38,8 +38,8 @@
     "version": "Versi"
   },
   "login": {
-    "title": "Masuk ke Enclosed",
-    "description": "Ini adalah instance pribadi Enclosed. Masukkan kredensial Anda untuk dapat membuat catatan.",
+    "title": "Masuk ke shh.io",
+    "description": "Ini adalah instance pribadi shh.io. Masukkan kredensial Anda untuk dapat membuat catatan.",
     "email": "Email",
     "password": "Kata Sandi",
     "submit": "Masuk",

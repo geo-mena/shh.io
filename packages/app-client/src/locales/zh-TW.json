@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "Enclosed",
+    "title": "shh.io",
     "description": "傳送私密且安全的筆記"
   },
   "insecureContextWarning": {
@@ -24,8 +24,8 @@
     },
     "settings": {
       "documentation": "文件",
-      "cli": "Enclosed CLI",
-      "support": "支持 Enclosed",
+      "cli": "shh.io CLI",
+      "support": "支持 shh.io",
       "report-bug": "報告錯誤",
       "logout": "登出",
       "contribute-to-i18n": "貢獻國際化語言"
@@ -38,8 +38,8 @@
     "version": "版本"
   },
   "login": {
-    "title": "登入 Enclosed",
-    "description": "這是一個私人實例的 Enclosed。請輸入您的憑證以創建筆記。",
+    "title": "登入 shh.io",
+    "description": "這是一個私人實例的 shh.io。請輸入您的憑證以創建筆記。",
     "email": "電子郵件",
     "password": "密碼",
     "submit": "登入",
