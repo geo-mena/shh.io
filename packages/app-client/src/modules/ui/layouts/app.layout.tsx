@@ -1,5 +1,5 @@
 import { authStore } from '@/modules/auth/auth.store';
-import { buildTimeConfig } from '@/modules/config/config.constants';
+// import { buildTimeConfig } from '@/modules/config/config.constants';
 import { getConfig } from '@/modules/config/config.provider';
 import { buildDocUrl } from '@/modules/docs/docs.models';
 import { useI18n } from '@/modules/i18n/i18n.provider';
