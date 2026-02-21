@@ -86,7 +86,7 @@ export const Navbar: Component = () => {
   const getShouldShowNewNoteButton = () => config.isAuthenticationRequired ? authStore.getIsAuthenticated() : true;
 
   return (
-    <div class="border-b border-border bg-surface">
+    <div class="bg-surface">
       <div class="flex items-center justify-between px-6 py-3 mx-auto max-w-1200px">
         <div class="flex items-center gap-4">
           <Button variant="link" class="text-lg font-semibold border-b border-transparent hover:(no-underline !border-border) h-auto py-0 px-1 ml--1 rounded-none !transition-border-color-250 flex items-center gap-2" onClick={newNoteClicked}>
@@ -210,21 +210,21 @@ export const Footer: Component = () => {
   const { t } = useI18n();
 
   return (
-    <div class="bg-surface border-t border-border py-6 px-6 text-center text-muted-foreground flex flex-col sm:flex-row items-center justify-center gap-1">
+    <div class="bg-surface py-6 px-6 text-center text-muted-foreground flex flex-col sm:flex-row items-center justify-center gap-1">
       <div>
         {t('footer.crafted-by')}
         {' '}
-        <Button variant="link" as="a" href="https://corentin.tech" target="_blank" class="p-0 text-muted-foreground underline hover:text-primary transition font-normal h-auto">Corentin Thomasset</Button>
+        <Button variant="link" as="a" href="https://corentin.tech" target="_blank" class="p-0 text-muted-foreground underline hover:text-primary transition font-normal h-auto">geomena</Button>
         .
       </div>
       <div>
         {t('footer.source-code')}
         {' '}
-        <Button variant="link" as="a" href="https://github.com/geo-mena/enclosed" target="_blank" class="p-0 text-muted-foreground underline hover:text-primary transition font-normal h-auto">{t('footer.github')}</Button>
+        <Button variant="link" as="a" href="https://github.com/geo-mena/shh.io" target="_blank" class="p-0 text-muted-foreground underline hover:text-primary transition font-normal h-auto">{t('footer.github')}</Button>
         .
       </div>
 
-      <div>
+      {/* <div>
         {t('footer.version')}
         {' '}
         <Button variant="link" as="a" href={`https://github.com/geo-mena/enclosed/tree/v${buildTimeConfig.enclosedVersion}`} target="_blank" class="p-0 text-muted-foreground underline hover:text-primary transition font-normal h-auto">
@@ -232,7 +232,7 @@ export const Footer: Component = () => {
           {buildTimeConfig.enclosedVersion}
         </Button>
 
-      </div>
+      </div> */}
     </div>
   );
 };
