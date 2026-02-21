@@ -7,7 +7,7 @@
 </p>
 
 <h1 align="center">
-  shh.io - Send private and secure notes
+  shh.io - send private and secure notes
 </h1>
 <p align="center">
   Minimalistic web application designed for sending end-to-end encrypted notes and files.
@@ -25,7 +25,7 @@
 
 ## Introduction
 
-**Enclosed** is a minimalistic web application designed for sending private and secure notes.
+**shh.io** is a minimalistic web application designed for sending private and secure notes.
 
 All notes are end-to-end encrypted, ensuring that the server and storage have zero knowledge of the content. Users can set a password, define an expiration period (TTL), and choose to have the note self-destruct after being read.
 
