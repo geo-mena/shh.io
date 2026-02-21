@@ -5,7 +5,7 @@ const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 test('Can create and view a note', async ({ page }) => {
   await page.goto('/');
 
-  await expect(page).toHaveTitle('Enclosed - Send private and secure notes');
+  await expect(page).toHaveTitle('shh.io - Send private and secure notes');
 
   // Write a note with a password and delete after reading
   await page.getByTestId('note-content').fill('Hello, World!');
