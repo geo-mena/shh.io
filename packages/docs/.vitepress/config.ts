@@ -26,7 +26,7 @@ export default defineConfig({
     },
 
     head: [
-        ['meta', { name: 'author', content: 'Corentin Thomasset' }],
+        ['meta', { name: 'author', content: 'geomena' }],
         ['meta', { name: 'keywords', content: 'shh.io, notes, secure, private, encrypted, self-hosted' }],
         ['link', { rel: 'icon', href: '/favicon.ico' }],
         ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }],
@@ -104,7 +104,7 @@ export default defineConfig({
         ],
 
         footer: {
-            copyright: 'Copyright © 2024-present Corentin Thomasset',
+            copyright: 'Copyright © 2024-present geomena',
         },
 
         editLink: {

@@ -60,6 +60,6 @@ You can use this banner to promote shh.io on social media platforms.
 
 ## Media Contact
 
-For media inquiries, please reach out to the project creator [Corentin Thomasset](https://corentin.tech).
+For media inquiries, please reach out to the project creator [geomena](https://geomena.com).
 
 If you have any specific branding requests or require additional assets, please open an issue on our [GitHub repository](https://github.com/geo-mena/shh.io).

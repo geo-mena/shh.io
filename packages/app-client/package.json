@@ -4,7 +4,7 @@
     "version": "1.0.0",
     "packageManager": "pnpm@9.15.0",
     "description": "shh.io frontend client",
-    "author": "Corentin Thomasset <corentinth@proton.me> (https://corentin.tech)",
+    "author": "geomena <geomenacontact@gmail.com> (https://geomena.com)",
     "license": "Apache-2.0",
     "repository": {
         "type": "git",
