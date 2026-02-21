@@ -158,8 +158,8 @@ This project is licensed under the Apache 2.0 License. See the [LICENSE](./LICEN
 
 ## Credits and Acknowledgements
 
-This project is crafted with ❤️ by [Corentin Thomasset](https://corentin.tech).
-If you find this project helpful, please consider [supporting my work](https://buymeacoffee.com/cthmsst).
+This project is crafted with ❤️ by [geomena](https://geomena.com).
+If you find this project helpful, please consider [supporting my work](https://github.com/sponsors/geo-mena).
 
 Thank you to all the contributors who have helped make Enclosed better!
 
