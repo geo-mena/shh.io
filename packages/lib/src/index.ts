@@ -34,4 +34,4 @@ export {
     storeNote,
 };
 
-export type { ShareConfig, ShareData, ShareHashFragmentData, SharedNoteResult } from './notes/notes.types';
+export type { ShareConfig, ShareData, SharedNoteResult, ShareHashFragmentData } from './notes/notes.types';

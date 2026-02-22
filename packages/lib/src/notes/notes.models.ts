@@ -150,7 +150,7 @@ function createShareNoteUrls({ noteId, shares, threshold, totalShares, clientBas
     isDeletedAfterReading?: boolean;
     pathPrefix?: string;
 }): { shareUrls: string[] } {
-    const shareUrls = shares.map(share => {
+    const shareUrls = shares.map((share) => {
         const hashFragment = createShareUrlHashFragment({
             threshold,
             totalShares,
