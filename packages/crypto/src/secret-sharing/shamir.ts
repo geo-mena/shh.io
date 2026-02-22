@@ -1,36 +1,21 @@
+import { EXP_TABLE, GF256_MAX_ELEMENT, LOG_TABLE, MAX_SHARES, MIN_THRESHOLD } from './shamir.constants';
+
 export { combineShares, splitSecret };
-
-const EXP_TABLE = new Uint8Array(256);
-const LOG_TABLE = new Uint8Array(256);
-
-(function buildTables() {
-    let x = 1;
-    for (let i = 0; i < 255; i++) {
-        EXP_TABLE[i] = x;
-        LOG_TABLE[x] = i;
-        x = (x << 1) ^ (x & 0x80 ? 0x11D : 0);
-    }
-    EXP_TABLE[255] = EXP_TABLE[0];
-})();
 
 function gfMultiply(a: number, b: number): number {
     if (a === 0 || b === 0) {
         return 0;
     }
-    return EXP_TABLE[(LOG_TABLE[a] + LOG_TABLE[b]) % 255];
+    return EXP_TABLE[(LOG_TABLE[a] + LOG_TABLE[b]) % GF256_MAX_ELEMENT];
 }
 
 function gfInverse(a: number): number {
     if (a === 0) {
         throw new Error('Cannot invert zero in GF(256)');
     }
-    return EXP_TABLE[255 - LOG_TABLE[a]];
+    return EXP_TABLE[GF256_MAX_ELEMENT - LOG_TABLE[a]];
 }
 
-/**
- * Evaluates a polynomial at a given point in GF(256).
- * coefficients[0] is the constant term (the secret byte).
- */
 function evaluatePolynomial(coefficients: Uint8Array, x: number): number {
     let result = 0;
     for (let i = coefficients.length - 1; i >= 0; i--) {
@@ -58,13 +43,13 @@ function splitSecret({ secret, totalShares, threshold, createRandomBuffer }: {
     if (secret.length === 0) {
         throw new Error('Secret must not be empty');
     }
-    if (threshold < 2) {
+    if (threshold < MIN_THRESHOLD) {
         throw new Error('Threshold must be at least 2');
     }
     if (totalShares < threshold) {
         throw new Error('Total shares must be at least equal to threshold');
     }
-    if (totalShares > 255) {
+    if (totalShares > MAX_SHARES) {
         throw new Error('Total shares must not exceed 255');
     }
 
@@ -99,7 +84,7 @@ function splitSecret({ secret, totalShares, threshold, createRandomBuffer }: {
 function combineShares({ shares }: {
     shares: Array<{ index: number; data: Uint8Array }>;
 }): { secret: Uint8Array } {
-    if (shares.length < 2) {
+    if (shares.length < MIN_THRESHOLD) {
         throw new Error('At least 2 shares are required');
     }
 

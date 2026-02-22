@@ -153,7 +153,8 @@
             "ready-to-decrypt": "All shares collected! Decrypting...",
             "add-share": "Add share",
             "invalid-share": "Invalid share URL. Make sure it's from the same note.",
-            "duplicate-share": "This share has already been added."
+            "duplicate-share": "This share has already been added.",
+            "wrong-note": "This share belongs to a different note. Make sure all shares are from the same note."
         },
         "error": {
             "invalid-url": {

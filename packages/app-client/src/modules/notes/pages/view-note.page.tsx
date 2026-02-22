@@ -167,6 +167,12 @@ export const ViewNotePage: Component = () => {
         try {
             const url = new URL(input);
             hashFragment = url.hash;
+
+            const pastedNoteId = url.pathname.split('/').pop();
+            if (pastedNoteId && pastedNoteId !== params.noteId) {
+                setShareError(t('view.sss.wrong-note'));
+                return;
+            }
         } catch {
             hashFragment = input.startsWith('#') ? input : `#${input}`;
         }
