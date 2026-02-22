@@ -31,7 +31,7 @@ All notes are end-to-end encrypted, ensuring that the server and storage have ze
 
 A live instance is available at [shh.tofi.pro](https://shh.tofi.pro).
 
-[![shh.io](./.github/enclosed-mockup.png)](https://shh.tofi.pro)
+[![shh.io](./.github/graph-image.png)](https://shh.tofi.pro)
 
 ## Features
 
