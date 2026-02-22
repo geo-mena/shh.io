@@ -1,7 +1,7 @@
 import process from 'node:process';
 import { defineConfig } from 'vitepress';
 import { getPlausibleScripts } from './plausible';
-import { githubIcon, linkedinIcon, xIcon } from './theme/icons';
+import { githubIcon, linkedinIcon } from './theme/icons';
 
 const basePath = process.env.DOCS_BASE_PATH; // undefined for root /
 
