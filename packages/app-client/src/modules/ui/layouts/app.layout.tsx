@@ -214,7 +214,7 @@ export const Footer: Component = () => {
             <div>
                 {t('footer.crafted-by')}
                 {' '}
-                <Button variant="link" as="a" href="https://corentin.tech" target="_blank" class="p-0 text-muted-foreground underline hover:text-primary transition font-normal h-auto">geomena</Button>
+                <Button variant="link" as="a" href="https://geomena.com" target="_blank" class="p-0 text-muted-foreground underline hover:text-primary transition font-normal h-auto">geomena</Button>
                 .
             </div>
             <div>
