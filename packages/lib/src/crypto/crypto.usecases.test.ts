@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'vitest';
 import { combineEncryptionKeyShares, splitEncryptionKey } from './crypto.usecases';
 
-describe('SSS encryption key operations', () => {
+describe('sss encryption key operations', () => {
     describe('splitEncryptionKey', () => {
         test('splits an encryption key into the specified number of shares', () => {
             const { shares } = splitEncryptionKey({ encryptionKey: 'dGVzdC1rZXk', totalShares: 3, threshold: 2 });

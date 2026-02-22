@@ -390,8 +390,12 @@ describe('note models', () => {
     describe('share hash fragment creation + parsing round-trip', () => {
         test('a share hash fragment can be parsed back to its original parts', () => {
             const hashFragment = createShareUrlHashFragment({
-                threshold: 3, totalShares: 5, shareIndex: 2, shareData: 'secretData123',
-                isPasswordProtected: true, isDeletedAfterReading: true,
+                threshold: 3,
+                totalShares: 5,
+                shareIndex: 2,
+                shareData: 'secretData123',
+                isPasswordProtected: true,
+                isDeletedAfterReading: true,
             });
 
             const parsed = parseShareUrlHashFragment({ hashFragment });
@@ -408,7 +412,10 @@ describe('note models', () => {
 
         test('round-trip works without optional flags', () => {
             const hashFragment = createShareUrlHashFragment({
-                threshold: 2, totalShares: 3, shareIndex: 1, shareData: 'data',
+                threshold: 2,
+                totalShares: 3,
+                shareIndex: 1,
+                shareData: 'data',
             });
 
             const parsed = parseShareUrlHashFragment({ hashFragment });
