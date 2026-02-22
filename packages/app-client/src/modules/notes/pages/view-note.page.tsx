@@ -1,3 +1,4 @@
+import type { ShareData } from '@geomena/lib';
 import { authStore } from '@/modules/auth/auth.store';
 import { getFileIcon } from '@/modules/files/files.models';
 import { useI18n } from '@/modules/i18n/i18n.provider';
@@ -10,7 +11,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/mod
 import { TextField, TextFieldLabel, TextFieldRoot } from '@/modules/ui/components/textfield';
 import { formatBytes, safely, safelySync } from '@corentinth/chisels';
 import { combineEncryptionKeyShares, decryptNote, isShareHashFragment, noteAssetsToFiles, parseNoteUrlHashFragment, parseShareUrlHashFragment } from '@geomena/lib';
-import type { ShareData } from '@geomena/lib';
 import { useLocation, useNavigate, useParams } from '@solidjs/router';
 import JSZip from 'jszip';
 import { type Component, createSignal, type JSX, Match, onMount, Show, Switch } from 'solid-js';
@@ -157,7 +157,9 @@ export const ViewNotePage: Component = () => {
 
     const addShare = async () => {
         const input = getShareInput().trim();
-        if (!input) return;
+        if (!input) {
+            return;
+        }
 
         setShareError('');
 
@@ -192,7 +194,9 @@ export const ViewNotePage: Component = () => {
 
             if (!getNote()) {
                 await fetchNoteForSss();
-                if (getError()) return;
+                if (getError()) {
+                    return;
+                }
             }
 
             if (getIsPasswordProtected()) {
@@ -473,13 +477,20 @@ export const ViewNotePage: Component = () => {
                                     </div>
                                 </div>
 
-                                <form onSubmit={(e) => { e.preventDefault(); addShare(); }}>
+                                <form onSubmit={(e) => {
+                                    e.preventDefault();
+                                    addShare();
+                                }}
+                                >
                                     <TextFieldRoot>
                                         <TextFieldLabel>{t('view.sss.paste-share')}</TextFieldLabel>
                                         <TextField
                                             placeholder="https://shh.io/note-id#sss:..."
                                             value={getShareInput()}
-                                            onInput={e => { setShareInput(e.currentTarget.value); setShareError(''); }}
+                                            onInput={(e) => {
+                                                setShareInput(e.currentTarget.value);
+                                                setShareError('');
+                                            }}
                                             autofocus
                                         />
                                     </TextFieldRoot>

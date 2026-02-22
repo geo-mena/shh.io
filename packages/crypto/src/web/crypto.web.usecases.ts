@@ -1,4 +1,4 @@
-import { splitSecret as shamirSplitSecret, combineShares as shamirCombineShares } from '../secret-sharing/shamir';
+import { combineShares as shamirCombineShares, splitSecret as shamirSplitSecret } from '../secret-sharing/shamir';
 
 export { base64UrlToBuffer, bufferToBase64Url, combineShares, createRandomBuffer, deriveMasterKey, generateBaseKey, splitSecret };
 

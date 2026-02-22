@@ -8,18 +8,22 @@ const LOG_TABLE = new Uint8Array(256);
     for (let i = 0; i < 255; i++) {
         EXP_TABLE[i] = x;
         LOG_TABLE[x] = i;
-        x = (x << 1) ^ (x & 0x80 ? 0x11d : 0);
+        x = (x << 1) ^ (x & 0x80 ? 0x11D : 0);
     }
     EXP_TABLE[255] = EXP_TABLE[0];
 })();
 
 function gfMultiply(a: number, b: number): number {
-    if (a === 0 || b === 0) return 0;
+    if (a === 0 || b === 0) {
+        return 0;
+    }
     return EXP_TABLE[(LOG_TABLE[a] + LOG_TABLE[b]) % 255];
 }
 
 function gfInverse(a: number): number {
-    if (a === 0) throw new Error('Cannot invert zero in GF(256)');
+    if (a === 0) {
+        throw new Error('Cannot invert zero in GF(256)');
+    }
     return EXP_TABLE[255 - LOG_TABLE[a]];
 }
 
@@ -39,10 +43,11 @@ function evaluatePolynomial(coefficients: Uint8Array, x: number): number {
  * Splits a secret into N shares where any K (threshold) shares can reconstruct it.
  * Uses Shamir's Secret Sharing over GF(256).
  *
- * @param secret - The secret bytes to split
- * @param totalShares - Number of shares to generate (N), must be >= threshold and <= 255
- * @param threshold - Minimum shares needed to reconstruct (K), must be >= 2
- * @param createRandomBuffer - Platform-specific random byte generator (injected for DI)
+ * @param args - The arguments for splitting the secret
+ * @param args.secret - The secret bytes to split
+ * @param args.totalShares - Number of shares to generate (N), must be >= threshold and <= 255
+ * @param args.threshold - Minimum shares needed to reconstruct (K), must be >= 2
+ * @param args.createRandomBuffer - Platform-specific random byte generator (injected for DI)
  */
 function splitSecret({ secret, totalShares, threshold, createRandomBuffer }: {
     secret: Uint8Array;
@@ -88,7 +93,8 @@ function splitSecret({ secret, totalShares, threshold, createRandomBuffer }: {
 /**
  * Reconstructs a secret from K or more shares using Lagrange interpolation over GF(256).
  *
- * @param shares - Array of shares, each with a unique index and data of equal length
+ * @param args - The arguments for combining shares
+ * @param args.shares - Array of shares, each with a unique index and data of equal length
  */
 function combineShares({ shares }: {
     shares: Array<{ index: number; data: Uint8Array }>;
@@ -118,7 +124,9 @@ function combineShares({ shares }: {
             let lagrangeBasis = 1;
 
             for (let j = 0; j < shares.length; j++) {
-                if (i === j) continue;
+                if (i === j) {
+                    continue;
+                }
                 const xj = shares[j].index;
                 lagrangeBasis = gfMultiply(lagrangeBasis, gfMultiply(xj, gfInverse(xj ^ xi)));
             }

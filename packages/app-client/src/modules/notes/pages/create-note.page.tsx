@@ -360,7 +360,9 @@ export const CreateNotePage: Component = () => {
                                                 const val = Number.parseInt(e.currentTarget.value, 10);
                                                 if (val >= 2 && val <= 10) {
                                                     setTotalShares(val);
-                                                    if (getThreshold() > val) setThreshold(val);
+                                                    if (getThreshold() > val) {
+                                                        setThreshold(val);
+                                                    }
                                                 }
                                             }}
                                         />

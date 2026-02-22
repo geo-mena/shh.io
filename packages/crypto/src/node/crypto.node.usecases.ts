@@ -1,7 +1,7 @@
 import { Buffer } from 'node:buffer';
 import { pbkdf2, randomBytes } from 'node:crypto';
 import { promisify, TextEncoder } from 'node:util';
-import { splitSecret as shamirSplitSecret, combineShares as shamirCombineShares } from '../secret-sharing/shamir';
+import { combineShares as shamirCombineShares, splitSecret as shamirSplitSecret } from '../secret-sharing/shamir';
 
 export { base64UrlToBuffer, bufferToBase64Url, combineShares, createRandomBuffer, deriveMasterKey, generateBaseKey, splitSecret };
 
