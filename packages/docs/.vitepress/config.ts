@@ -1,7 +1,7 @@
 import process from 'node:process';
 import { defineConfig } from 'vitepress';
 import { getPlausibleScripts } from './plausible';
-import { githubIcon, xIcon } from './theme/icons';
+import { githubIcon, linkedinIcon, xIcon } from './theme/icons';
 
 const basePath = process.env.DOCS_BASE_PATH; // undefined for root /
 
@@ -115,7 +115,7 @@ export default defineConfig({
 
         socialLinks: [
             { icon: { svg: githubIcon }, link: 'https://github.com/geo-mena/shh.io', ariaLabel: 'GitHub' },
-            { icon: { svg: xIcon }, link: 'https://x.com/cthmsst', ariaLabel: 'X' },
+            { icon: { svg: linkedinIcon }, link: 'https://www.linkedin.com/in/geomena', ariaLabel: 'LinkedIn' },
         ],
 
         search: {
