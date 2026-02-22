@@ -9,7 +9,8 @@ import { Button } from '@/modules/ui/components/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/modules/ui/components/card';
 import { TextField, TextFieldLabel, TextFieldRoot } from '@/modules/ui/components/textfield';
 import { formatBytes, safely, safelySync } from '@corentinth/chisels';
-import { decryptNote, noteAssetsToFiles, parseNoteUrlHashFragment } from '@geomena/lib';
+import { combineEncryptionKeyShares, decryptNote, isShareHashFragment, noteAssetsToFiles, parseNoteUrlHashFragment, parseShareUrlHashFragment } from '@geomena/lib';
+import type { ShareData } from '@geomena/lib';
 import { useLocation, useNavigate, useParams } from '@solidjs/router';
 import JSZip from 'jszip';
 import { type Component, createSignal, type JSX, Match, onMount, Show, Switch } from 'solid-js';
@@ -77,6 +78,13 @@ export const ViewNotePage: Component = () => {
 
     const [getEncryptionKey, setEncryptionKey] = createSignal('');
     const [getIsPasswordProtected, setIsPasswordProtected] = createSignal(false);
+    const [getIsShareMode, setIsShareMode] = createSignal(false);
+    const [getCollectedShares, setCollectedShares] = createSignal<ShareData[]>([]);
+    const [getSssThreshold, setSssThreshold] = createSignal(0);
+    const [getSssTotalShares, setSssTotalShares] = createSignal(0);
+    const [getShareInput, setShareInput] = createSignal('');
+    const [getShareError, setShareError] = createSignal('');
+    const [getSssIsDeletedAfterReading, setSssIsDeletedAfterReading] = createSignal(false);
 
     const { t } = useI18n();
     const navigate = useNavigate();
@@ -126,7 +134,137 @@ export const ViewNotePage: Component = () => {
         setIsPasswordEntered(true);
     };
 
+    const fetchNoteForSss = async () => {
+        if (getSssIsDeletedAfterReading()) {
+            await warnForNoteDeletion();
+        }
+
+        const [fetchedNote, fetchError] = await safely(fetchNoteById({ noteId: params.noteId }));
+
+        if (fetchError) {
+            if (isRateLimitError({ error: fetchError })) {
+                setError({ title: t('view.error.rate-limit.title'), description: t('view.error.rate-limit.description') });
+            } else if (isHttpErrorWithCode({ error: fetchError, code: 'note.not_found' })) {
+                setError({ title: t('view.error.note-not-found.title'), description: t('view.error.note-not-found.description') });
+            } else {
+                setError({ title: t('view.error.fetch-error.title'), description: t('view.error.fetch-error.description') });
+            }
+            return;
+        }
+
+        setNote(fetchedNote.note);
+    };
+
+    const addShare = async () => {
+        const input = getShareInput().trim();
+        if (!input) return;
+
+        setShareError('');
+
+        let hashFragment: string;
+        try {
+            const url = new URL(input);
+            hashFragment = url.hash;
+        } catch {
+            hashFragment = input.startsWith('#') ? input : `#${input}`;
+        }
+
+        const [parsed, parseError] = safelySync(() => parseShareUrlHashFragment({ hashFragment }));
+
+        if (parseError) {
+            setShareError(t('view.sss.invalid-share'));
+            return;
+        }
+
+        const isDuplicate = getCollectedShares().some(s => s.index === parsed.shareIndex);
+        if (isDuplicate) {
+            setShareError(t('view.sss.duplicate-share'));
+            return;
+        }
+
+        const newShares = [...getCollectedShares(), { index: parsed.shareIndex, data: parsed.shareData }];
+        setCollectedShares(newShares);
+        setShareInput('');
+
+        if (newShares.length >= getSssThreshold()) {
+            const { encryptionKey } = combineEncryptionKeyShares({ shares: newShares });
+            setEncryptionKey(encryptionKey);
+
+            if (!getNote()) {
+                await fetchNoteForSss();
+                if (getError()) return;
+            }
+
+            if (getIsPasswordProtected()) {
+                return;
+            }
+            decrypt();
+        }
+    };
+
     onMount(async () => {
+        const isSss = safelySync(() => isShareHashFragment({ hashFragment: location.hash }))[0];
+
+        if (isSss) {
+            const [parsed, parseError] = safelySync(() => parseShareUrlHashFragment({ hashFragment: location.hash }));
+
+            if (parseError) {
+                setError({
+                    title: t('view.error.invalid-url.title'),
+                    description: t('view.error.invalid-url.description'),
+                });
+                return;
+            }
+
+            setIsShareMode(true);
+            setSssThreshold(parsed.threshold);
+            setSssTotalShares(parsed.totalShares);
+            setIsPasswordProtected(parsed.isPasswordProtected);
+            setCollectedShares([{ index: parsed.shareIndex, data: parsed.shareData }]);
+
+            const isDeletedAfterReading = parsed.isDeletedAfterReading;
+            setSssIsDeletedAfterReading(isDeletedAfterReading);
+
+            if (isDeletedAfterReading) {
+                const [noteExistsResult, noteExistsError] = await safely(fetchNoteExists({ noteId: params.noteId }));
+
+                if (noteExistsError) {
+                    setError({ title: t('view.error.fetch-error.title'), description: t('view.error.fetch-error.description') });
+                    return;
+                }
+
+                if (!noteExistsResult.noteExists) {
+                    setError({ title: t('view.error.note-not-found.title'), description: t('view.error.note-not-found.description') });
+                    return;
+                }
+            } else {
+                const [fetchedNote, fetchError] = await safely(fetchNoteById({ noteId: params.noteId }));
+
+                if (fetchError) {
+                    if (isRateLimitError({ error: fetchError })) {
+                        setError({ title: t('view.error.rate-limit.title'), description: t('view.error.rate-limit.description') });
+                    } else if (isHttpErrorWithCode({ error: fetchError, code: 'note.not_found' })) {
+                        setError({ title: t('view.error.note-not-found.title'), description: t('view.error.note-not-found.description') });
+                    } else {
+                        setError({ title: t('view.error.fetch-error.title'), description: t('view.error.fetch-error.description') });
+                    }
+                    return;
+                }
+
+                setNote(fetchedNote.note);
+            }
+
+            if (parsed.threshold <= 1) {
+                const { encryptionKey } = combineEncryptionKeyShares({ shares: [{ index: parsed.shareIndex, data: parsed.shareData }] });
+                setEncryptionKey(encryptionKey);
+                if (!parsed.isPasswordProtected) {
+                    await decrypt();
+                }
+            }
+
+            return;
+        }
+
         const [parsedHashFragment, parsingError] = safelySync(() => parseNoteUrlHashFragment({ hashFragment: location.hash }));
 
         if (parsingError) {
@@ -305,6 +443,66 @@ export const ViewNotePage: Component = () => {
                                 </div>
                             </CardContent>
                         </Card>
+                    </div>
+                </Match>
+
+                <Match when={getIsShareMode() && getCollectedShares().length < getSssThreshold()}>
+                    <div class="sm:mt-6 p-6">
+                        <Card class="w-full max-w-md mx-auto">
+                            <CardHeader>
+                                <CardTitle class="text-base font-semibold">
+                                    {t('view.sss.share-info', { index: getCollectedShares()[0]?.index, total: getSssTotalShares() })}
+                                </CardTitle>
+                                <CardDescription>
+                                    {t('view.sss.threshold-info', { threshold: getSssThreshold(), total: getSssTotalShares() })}
+                                </CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                                <div class="mb-4">
+                                    <div class="flex items-center gap-1 mb-2">
+                                        {Array.from({ length: getSssThreshold() }).map((_, i) => (
+                                            <div class={cn(
+                                                'h-2 flex-1 rounded-full transition-colors',
+                                                i < getCollectedShares().length ? 'bg-primary' : 'bg-muted',
+                                            )}
+                                            />
+                                        ))}
+                                    </div>
+                                    <div class="text-sm text-muted-foreground text-center">
+                                        {t('view.sss.shares-collected', { count: getCollectedShares().length, threshold: getSssThreshold() })}
+                                    </div>
+                                </div>
+
+                                <form onSubmit={(e) => { e.preventDefault(); addShare(); }}>
+                                    <TextFieldRoot>
+                                        <TextFieldLabel>{t('view.sss.paste-share')}</TextFieldLabel>
+                                        <TextField
+                                            placeholder="https://shh.io/note-id#sss:..."
+                                            value={getShareInput()}
+                                            onInput={e => { setShareInput(e.currentTarget.value); setShareError(''); }}
+                                            autofocus
+                                        />
+                                    </TextFieldRoot>
+                                    <Button class="w-full mt-3" type="submit">
+                                        <div class="i-tabler-key mr-2 text-lg"></div>
+                                        {t('view.sss.add-share')}
+                                    </Button>
+                                </form>
+
+                                <Show when={getShareError()}>
+                                    <Alert class="mt-3" variant="destructive">
+                                        <AlertDescription>{getShareError()}</AlertDescription>
+                                    </Alert>
+                                </Show>
+                            </CardContent>
+                        </Card>
+                    </div>
+                </Match>
+
+                <Match when={getIsShareMode() && getCollectedShares().length >= getSssThreshold() && !getDecryptedNote() && !getError() && (!getIsPasswordProtected() || !getNote())}>
+                    <div class="mx-auto max-w-400px text-center mt-6 flex flex-col justify-center items-center p-6 gap-2">
+                        <div class="i-tabler-loader-2 text-3xl animate-spin text-muted-foreground op-60"></div>
+                        <div class="text-muted-foreground">{t('view.sss.ready-to-decrypt')}</div>
                     </div>
                 </Match>
 

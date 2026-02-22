@@ -1,7 +1,7 @@
 {
     "name": "@geomena/app-client",
     "type": "module",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "packageManager": "pnpm@9.15.0",
     "description": "shh.io frontend client",
     "author": "geomena <geomenacontact@gmail.com> (https://geomena.com)",

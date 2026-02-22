@@ -1,7 +1,7 @@
 {
     "name": "@geomena/crypto",
     "type": "module",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "packageManager": "pnpm@9.15.0",
     "description": "shh.io cross-env crypto primitives",
     "author": "geomena <geomenacontact@gmail.com> (https://geomena.com)",

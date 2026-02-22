@@ -1,4 +1,6 @@
-export { base64UrlToBuffer, bufferToBase64Url, createRandomBuffer, deriveMasterKey, generateBaseKey };
+import { splitSecret as shamirSplitSecret, combineShares as shamirCombineShares } from '../secret-sharing/shamir';
+
+export { base64UrlToBuffer, bufferToBase64Url, combineShares, createRandomBuffer, deriveMasterKey, generateBaseKey, splitSecret };
 
 function bufferToBase64Url({ buffer }: { buffer: Uint8Array }): string {
     const chunkSize = 0x8000; // 32KB chunks to avoid stack overflow
@@ -63,4 +65,12 @@ async function deriveMasterKey({ baseKey, password = '' }: { baseKey: Uint8Array
     return {
         masterKey: new Uint8Array(exportedKey),
     };
+}
+
+function splitSecret({ secret, totalShares, threshold }: { secret: Uint8Array; totalShares: number; threshold: number }) {
+    return shamirSplitSecret({ secret, totalShares, threshold, createRandomBuffer });
+}
+
+function combineShares({ shares }: { shares: Array<{ index: number; data: Uint8Array }> }) {
+    return shamirCombineShares({ shares });
 }

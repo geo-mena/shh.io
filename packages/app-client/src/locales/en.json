@@ -87,6 +87,13 @@
                 "label": "Delete after reading",
                 "description": "Delete the note after reading"
             },
+            "secret-sharing": {
+                "label": "Secret sharing",
+                "description": "Split the encryption key among multiple people",
+                "total-shares": "Total shares (N)",
+                "threshold": "Required to decrypt (K)",
+                "info": "Any {{ threshold }} of {{ totalShares }} shares needed to decrypt"
+            },
             "attach-files": "Attach files",
             "drop-files": {
                 "title": "Drop files here",
@@ -100,7 +107,9 @@
             "description": "Your note has been created. You can now share it using the following link.",
             "with-deletion": "The note will be deleted after reading.",
             "copy-link": "Copy link",
-            "copy-success": "Link copied"
+            "copy-success": "Link copied",
+            "sss-description": "Share each link with a different person. Any {{ threshold }} of {{ totalShares }} shares are needed to decrypt the note.",
+            "share-label": "Share {{ index }} of {{ total }}"
         },
         "qr-code": {
             "title": "Share this note on mobile",
@@ -135,6 +144,16 @@
             "title": "This note will be deleted",
             "description": "This note has been configured to be deleted after reading. After displaying the note, it will be permanently deleted and cannot be recovered.",
             "confirm": "I understand, show me the note"
+        },
+        "sss": {
+            "share-info": "You have share {{ index }} of {{ total }}",
+            "threshold-info": "{{ threshold }} of {{ total }} shares needed to decrypt",
+            "paste-share": "Paste another share URL to add it",
+            "shares-collected": "{{ count }} of {{ threshold }} shares collected",
+            "ready-to-decrypt": "All shares collected! Decrypting...",
+            "add-share": "Add share",
+            "invalid-share": "Invalid share URL. Make sure it's from the same note.",
+            "duplicate-share": "This share has already been added."
         },
         "error": {
             "invalid-url": {

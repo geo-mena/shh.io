@@ -1,7 +1,7 @@
 {
     "name": "@geomena/docs",
     "type": "module",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "packageManager": "pnpm@9.15.0",
     "description": "Documentation website for shh.io.",
     "author": "geomena <geomenacontact@gmail.com> (https://geomena.com)",

@@ -21,6 +21,7 @@ The name **shh.io** is inspired by the idea of keeping your notes safe and secur
 - **Responsive Design**: The application works seamlessly on all devices, from desktops to mobile phones.
 - **Open Source**: The source code is available under the Apache 2.0 License, allowing for community contributions and self-hosting.
 - **Self-Hostable**: Run your instance of shh.io to maintain complete control over your note-sharing environment.
+- **Secret Sharing**: Split the encryption key into multiple shares using [Shamir's Secret Sharing](/secret-sharing). Require K-of-N shares to decrypt — no single person can access the note alone.
 - **CLI**: A command-line interface is available for creating and managing notes directly from your terminal.
 - **Very low environmental impact**: the app and the docs is rated A+ on websitecarbon.com (see [here](https://www.websitecarbon.com/website/shh-tofi-pro/) and [here](https://www.websitecarbon.com/website/docs-shh-tofi-pro/)).
 

@@ -1,10 +1,10 @@
 import type { NoteAsset } from '../notes/notes.types';
 import type { EncryptionAlgorithm } from './crypto.types';
 import type { SerializationFormat } from './serialization/serialization.types';
-import { base64UrlToBuffer, bufferToBase64Url, deriveMasterKey, generateBaseKey, getDecryptionMethod, getEncryptionMethod } from '@geomena/crypto';
+import { base64UrlToBuffer, bufferToBase64Url, combineShares, deriveMasterKey, generateBaseKey, getDecryptionMethod, getEncryptionMethod, splitSecret } from '@geomena/crypto';
 import { getParsingMethod, getSerializationMethod } from './serialization/serialization.registry';
 
-export { decryptNote, encryptNote };
+export { combineEncryptionKeyShares, decryptNote, encryptNote, splitEncryptionKey };
 
 async function encryptNote({
     content,
@@ -60,4 +60,33 @@ async function decryptNote({
     const { note } = await parseNote({ noteBuffer: decryptedBuffer });
 
     return { note };
+}
+
+function splitEncryptionKey({ encryptionKey, totalShares, threshold }: {
+    encryptionKey: string;
+    totalShares: number;
+    threshold: number;
+}): { shares: Array<{ index: number; data: string }> } {
+    const secret = base64UrlToBuffer({ base64Url: encryptionKey });
+    const { shares } = splitSecret({ secret, totalShares, threshold });
+
+    return {
+        shares: shares.map(share => ({
+            index: share.index,
+            data: bufferToBase64Url({ buffer: share.data }),
+        })),
+    };
+}
+
+function combineEncryptionKeyShares({ shares }: {
+    shares: Array<{ index: number; data: string }>;
+}): { encryptionKey: string } {
+    const binaryShares = shares.map(share => ({
+        index: share.index,
+        data: base64UrlToBuffer({ base64Url: share.data }),
+    }));
+
+    const { secret } = combineShares({ shares: binaryShares });
+
+    return { encryptionKey: bufferToBase64Url({ buffer: secret }) };
 }

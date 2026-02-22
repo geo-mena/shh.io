@@ -23,7 +23,7 @@ import { renderSVG as renderQrCodeSvg } from 'uqr';
 import { FileUploaderButton } from '../components/file-uploader';
 import { NotePasswordField } from '../components/note-password-field';
 import { useNoteContext } from '../notes.context';
-import { encryptAndCreateNote } from '../notes.usecases';
+import { encryptAndCreateNote, encryptAndCreateSharedNote } from '../notes.usecases';
 
 const QrCodeCard: Component<{ noteUrl: string }> = (props) => {
     const getNoteUrl = () => props.noteUrl;
@@ -123,6 +123,10 @@ export const CreateNotePage: Component = () => {
     const [getUploadedFiles, setUploadedFiles] = createSignal<File[]>([]);
     const [getIsNoteCreating, setIsNoteCreating] = createSignal(false);
     const [getHasNoExpiration, setHasNoExpiration] = createSignal(config.defaultNoteNoExpiration);
+    const [getIsSecretSharing, setIsSecretSharing] = createSignal(false);
+    const [getTotalShares, setTotalShares] = createSignal(3);
+    const [getThreshold, setThreshold] = createSignal(2);
+    const [getShareUrls, setShareUrls] = createSignal<string[]>([]);
 
     function resetNoteForm() {
         setContent('');
@@ -136,6 +140,10 @@ export const CreateNotePage: Component = () => {
         setUploadedFiles([]);
         setIsNoteCreating(false);
         setHasNoExpiration(config.defaultNoteNoExpiration);
+        setIsSecretSharing(false);
+        setTotalShares(3);
+        setThreshold(2);
+        setShareUrls([]);
     }
 
     onMount(() => {
@@ -159,7 +167,7 @@ export const CreateNotePage: Component = () => {
 
         setIsNoteCreating(true);
 
-        const [createdNote, error] = await safely(encryptAndCreateNote({
+        const baseArgs = {
             content: getContent(),
             password: getPassword(),
             ttlInSeconds: getHasNoExpiration() ? undefined : getTtlInSeconds(),
@@ -167,14 +175,24 @@ export const CreateNotePage: Component = () => {
             fileAssets: getUploadedFiles(),
             isPublic: getIsPublic(),
             pathPrefix: config.viewNotePathPrefix,
-        }));
+        };
+
+        const [result, error] = getIsSecretSharing()
+            ? await safely(encryptAndCreateSharedNote({
+                ...baseArgs,
+                totalShares: getTotalShares(),
+                threshold: getThreshold(),
+            }))
+            : await safely(encryptAndCreateNote(baseArgs));
 
         setIsNoteCreating(false);
 
         if (!error) {
-            const { noteUrl } = createdNote;
-
-            setNoteUrl(noteUrl);
+            if ('shareUrls' in result) {
+                setShareUrls(result.shareUrls);
+            } else {
+                setNoteUrl(result.noteUrl);
+            }
             setIsNoteCreated(true);
             return;
         }
@@ -316,6 +334,59 @@ export const CreateNotePage: Component = () => {
                             </SwitchUiComponent>
                         </TextFieldRoot>
 
+                        <TextFieldRoot class="w-full">
+                            <TextFieldLabel>
+                                {t('create.settings.secret-sharing.label')}
+                            </TextFieldLabel>
+                            <SwitchUiComponent class="flex items-center space-x-2" checked={getIsSecretSharing()} onChange={setIsSecretSharing}>
+                                <SwitchControl>
+                                    <SwitchThumb />
+                                </SwitchControl>
+                                <SwitchLabel class="text-sm text-muted-foreground">
+                                    {t('create.settings.secret-sharing.description')}
+                                </SwitchLabel>
+                            </SwitchUiComponent>
+
+                            <Show when={getIsSecretSharing()}>
+                                <div class="flex gap-2 mt-2">
+                                    <TextFieldRoot class="flex-1">
+                                        <TextFieldLabel class="text-xs">{t('create.settings.secret-sharing.total-shares')}</TextFieldLabel>
+                                        <TextField
+                                            type="number"
+                                            min={2}
+                                            max={10}
+                                            value={getTotalShares()}
+                                            onInput={(e) => {
+                                                const val = Number.parseInt(e.currentTarget.value, 10);
+                                                if (val >= 2 && val <= 10) {
+                                                    setTotalShares(val);
+                                                    if (getThreshold() > val) setThreshold(val);
+                                                }
+                                            }}
+                                        />
+                                    </TextFieldRoot>
+                                    <TextFieldRoot class="flex-1">
+                                        <TextFieldLabel class="text-xs">{t('create.settings.secret-sharing.threshold')}</TextFieldLabel>
+                                        <TextField
+                                            type="number"
+                                            min={2}
+                                            max={getTotalShares()}
+                                            value={getThreshold()}
+                                            onInput={(e) => {
+                                                const val = Number.parseInt(e.currentTarget.value, 10);
+                                                if (val >= 2 && val <= getTotalShares()) {
+                                                    setThreshold(val);
+                                                }
+                                            }}
+                                        />
+                                    </TextFieldRoot>
+                                </div>
+                                <div class="text-xs text-muted-foreground mt-1">
+                                    {t('create.settings.secret-sharing.info', { threshold: getThreshold(), totalShares: getTotalShares() })}
+                                </div>
+                            </Show>
+                        </TextFieldRoot>
+
                         <div>
                             <FileUploaderButton variant="secondary" class="mt-2 w-full" multiple onFilesUpload={({ files }) => updateUploadedFiles(files)}>
                                 <div class="i-tabler-upload mr-2 text-lg text-muted-foreground"></div>
@@ -355,6 +426,41 @@ export const CreateNotePage: Component = () => {
 
                     </div>
 
+                </Match>
+
+                <Match when={getIsNoteCreated() && getShareUrls().length > 0}>
+                    <div class="flex flex-col justify-center items-center gap-2 w-full mt-12 mx-auto">
+                        <div class="i-tabler-circle-check text-primary text-5xl"></div>
+                        <div class="text-xl font-semibold">
+                            {t('create.success.title')}
+                        </div>
+
+                        <div class="text-muted-foreground text-center max-w-500px">
+                            {t('create.success.sss-description', { threshold: getThreshold(), totalShares: getTotalShares() })}
+                        </div>
+
+                        <div class="w-full max-w-800px mt-4 flex flex-col gap-3">
+                            {getShareUrls().map((url, index) => (
+                                <div class="flex flex-col gap-1">
+                                    <div class="text-sm font-medium text-muted-foreground">
+                                        {t('create.success.share-label', { index: index + 1, total: getShareUrls().length })}
+                                    </div>
+                                    <div class="flex gap-2 items-center">
+                                        <TextFieldRoot class="flex-1">
+                                            <TextField value={url} readonly class="w-full text-xs" />
+                                        </TextFieldRoot>
+                                        <CopyButton
+                                            variant="secondary"
+                                            class="flex-shrink-0"
+                                            text={url}
+                                            label={t('create.success.copy-link')}
+                                            copiedLabel={t('create.success.copy-success')}
+                                        />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </Match>
 
                 <Match when={getIsNoteCreated()}>

@@ -1,8 +1,9 @@
 import { Buffer } from 'node:buffer';
 import { pbkdf2, randomBytes } from 'node:crypto';
 import { promisify, TextEncoder } from 'node:util';
+import { splitSecret as shamirSplitSecret, combineShares as shamirCombineShares } from '../secret-sharing/shamir';
 
-export { base64UrlToBuffer, bufferToBase64Url, createRandomBuffer, deriveMasterKey, generateBaseKey };
+export { base64UrlToBuffer, bufferToBase64Url, combineShares, createRandomBuffer, deriveMasterKey, generateBaseKey, splitSecret };
 
 const deriveWithPbkdf2 = promisify(pbkdf2);
 
@@ -37,4 +38,12 @@ async function deriveMasterKey({ baseKey, password = '' }: { baseKey: Uint8Array
     return {
         masterKey,
     };
+}
+
+function splitSecret({ secret, totalShares, threshold }: { secret: Uint8Array; totalShares: number; threshold: number }) {
+    return shamirSplitSecret({ secret, totalShares, threshold, createRandomBuffer });
+}
+
+function combineShares({ shares }: { shares: Array<{ index: number; data: Uint8Array }> }) {
+    return shamirCombineShares({ shares });
 }

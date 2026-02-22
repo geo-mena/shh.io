@@ -46,6 +46,7 @@ A live instance is available at [shh.tofi.pro](https://shh.tofi.pro).
 - **Responsive Design**: Works on all devices, from desktops to mobile phones.
 - **Open Source**: The source code is available under the Apache 2.0 License.
 - **Self-Hostable**: Run your instance of shh.io for private note sharing.
+- **Secret Sharing (SSS)**: Split the encryption key into multiple shares using [Shamir's Secret Sharing](https://shh-docs.tofi.pro/secret-sharing). Require K-of-N shares to decrypt — no single person can access the note alone.
 - **CLI**: A command-line interface for creating notes from the terminal.
 - **Very low environmental impact**: the app and the docs is rated A+ on websitecarbon.com (see [here](https://www.websitecarbon.com/website/shh-tofi-pro/) and [here](https://www.websitecarbon.com/website/docs-shh-tofi-pro/)).
 
@@ -89,6 +90,18 @@ You can refer to the [configuration documentation](https://shh-docs.tofi.pro/sel
 13. **Note Decryption**: The note is decrypted using the master key with **AES-GCM** and can now be read by the recipient.
 
 This ensures that the note remains securely encrypted during transmission and storage, with decryption only possible by those with the correct link and (if applicable) password.
+
+### Secret Sharing (Shamir's Secret Sharing)
+
+Instead of generating a single link, the encryption key can be split into **N shares** using Shamir's Secret Sharing. A minimum of **K shares** (the threshold) are needed to reconstruct the key and decrypt the note. Any fewer shares reveal zero information about the key.
+
+1. The note is encrypted normally (steps 1–6 above).
+2. The **base key** is split into N shares over the finite field GF(256).
+3. **N unique links** are generated, each containing one share in the URL hash fragment.
+4. Each link is distributed to a different person.
+5. To decrypt, K recipients combine their shares — the key is reconstructed via Lagrange interpolation and the note is decrypted as usual (steps 10–13).
+
+The server has no awareness of secret sharing — the encrypted payload is identical to a standard note. Learn more in the [Secret Sharing documentation](https://shh-docs.tofi.pro/secret-sharing).
 
 ## CLI
 

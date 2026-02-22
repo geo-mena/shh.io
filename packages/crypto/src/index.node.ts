@@ -14,6 +14,8 @@ export const {
     getEncryptionMethod,
     base64UrlToBuffer,
     bufferToBase64Url,
+    splitSecret,
+    combineShares,
 } = createEnclosedCryptoApi({
     ...webCryptoApi,
     encryptionMethodDefinitions: {

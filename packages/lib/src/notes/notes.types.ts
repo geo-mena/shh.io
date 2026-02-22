@@ -24,3 +24,29 @@ export type EncryptedNote = {
     ttlInSeconds: number;
     deleteAfterReading: boolean;
 };
+
+export type ShareConfig = {
+    totalShares: number;
+    threshold: number;
+};
+
+export type ShareData = {
+    index: number;
+    data: string;
+};
+
+export type ShareHashFragmentData = {
+    threshold: number;
+    totalShares: number;
+    shareIndex: number;
+    shareData: string;
+    isPasswordProtected: boolean;
+    isDeletedAfterReading: boolean;
+};
+
+export type SharedNoteResult = {
+    noteId: string;
+    shareUrls: string[];
+    threshold: number;
+    totalShares: number;
+};
